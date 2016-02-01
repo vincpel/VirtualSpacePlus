@@ -8190,3 +8190,1188 @@ Can't verify CSRF token authenticity
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
   Rendered html template (0.0ms)
 Completed 200 OK in 92ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 22:56:30 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 22:56:30 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 22:56:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"dasd", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'dasd' LIMIT 1
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `password' for nil:NilClass):
+  app/controllers/sessions_controller.rb:19:in `create'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.4ms)
+
+
+Started GET "/login%5C" for 127.0.0.1 at 2016-01-31 22:58:13 -0500
+
+ActionController::RoutingError (No route matches [GET] "/login%5C"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/antoine/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/antoine/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/antoine/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (39.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (23.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (47.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 22:58:17 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 22:58:18 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 22:58:31 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 1.4ms)
+
+NameError (undefined local variable or method `give_token' for #<SessionsController:0x007f8834766510>):
+  app/controllers/sessions_controller.rb:13:in `create'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (42.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:06:21 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:06:22 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:06:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zzXOQyl0u9M2hY5KfJByKHNIH20F0A8EhDrqeKv61p7c3aBeiZgCaFIcr3+PIXq7zb9+6FKhY4exGYwP6rTh3Q==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` IS NULL LIMIT 1
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `password' for nil:NilClass):
+  app/controllers/sessions_controller.rb:12:in `create'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (40.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:07:58 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:07:58 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:08:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ipt/scjR00dFkz9BvE7U7GT696vv/ympbPuzkfZycc+ZcxGsaD1q/CEKHnRP/9x/2g2WLriORSpZ2NXmtzxGjA==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/sessions_controller.rb:11:in `[]'
+  app/controllers/sessions_controller.rb:11:in `create'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (40.3ms)
+
+
+Started PUT "/console/repl_sessions/030c066acdd023e960ec470551a9391a" for 127.0.0.1 at 2016-01-31 23:10:49 -0500
+
+
+Started PUT "/console/repl_sessions/030c066acdd023e960ec470551a9391a" for 127.0.0.1 at 2016-01-31 23:10:56 -0500
+
+
+Started PUT "/console/repl_sessions/030c066acdd023e960ec470551a9391a" for 127.0.0.1 at 2016-01-31 23:11:12 -0500
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:11:43 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:11:43 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:11:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XRpPJQ2UgN8MPFX6Y/U19A0mAi4DHnrs1ybnsq44/qZO8iE4rXg5ZGildM+QRD1ns9Fjq1RvFm/iBYHF73bJ5Q==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
+  Rendered html template (0.0ms)
+Completed 200 OK in 109ms (Views: 0.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:11:57 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XRpPJQ2UgN8MPFX6Y/U19A0mAi4DHnrs1ybnsq44/qZO8iE4rXg5ZGildM+QRD1ns9Fjq1RvFm/iBYHF73bJ5Q==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+  Rendered html template (0.0ms)
+Completed 200 OK in 97ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-01-31 23:12:41 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:12:41 -0500
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-01-31 23:12:43 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-01-31 23:12:58 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"g@gmail.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`email`, `password_hash`, `created_at`, `updated_at`) VALUES ('g@gmail.com', '$2a$10$hVr45xzDPt.2Bkl1BcjGjuSS3OXxR/OsHpWV8ObfyTjY3dKgpsNZG', '2016-02-01 04:12:58', '2016-02-01 04:12:58')[0m
+  [1m[35m (2.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/users
+Completed 302 Found in 102ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-01-31 23:12:58 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:12:58 -0500
+
+
+Started GET "/logi" for 127.0.0.1 at 2016-01-31 23:13:17 -0500
+
+ActionController::RoutingError (No route matches [GET] "/logi"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/antoine/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/antoine/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/antoine/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (44.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (28.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (52.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:13:21 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 68ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:13:21 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:13:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hAy6MCgJ65mnikdhpyQ9IjVEJ2Td3haR7MsAwdcfwS+X5NQtiOVSIsMTZlRUlTWxi7NG4YqvehLZ6Ga2llH2bA==", "session"=>{"email"=>"g@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'g@gmail.com' LIMIT 1
+  Rendered html template (0.1ms)
+Completed 200 OK in 97ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:16:52 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:16:52 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:17:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F3MgfjDgwpJj2nTH1DZaK1boxsCq6A8FlG1B4T68vccEm05jkAx7KQdDVfInh1K46B+nRf2ZY4ahTieWf/KKhA==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
+  Rendered html template (0.0ms)
+Completed 200 OK in 111ms (Views: 0.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:17:06 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:17:06 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:17:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bs9ghMnamiR+VLjSXOyfJNWL6q9cw1GfwYkfLjTLFbF9Jw6ZaTYjnxrNmeevXZe3a3yLKguyPRz0qnlZdYUi8g==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+  Rendered html template (0.0ms)
+Completed 200 OK in 111ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:18:12 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:18:12 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:18:22 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A4mqcy+Hhlm1cZWUzFdeTxZ2ku85dKUPQPmMCSin0ScQYcRuj2s/4tHotKE/5lbcqIHzam4FyYx12up+aenmZA==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (7.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 12.3ms)
+
+ActionView::MissingTemplate (Missing template sessions/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/antoine/Dropbox/UQAM/INM5151/tp/bookUsed/app/views"
+):
+  app/controllers/sessions_controller.rb:16:in `create'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (28.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (38.4ms)
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:18:37 -0500
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:19:06 -0500
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:19:33 -0500
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:19:59 -0500
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:20:44 -0500
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:22:38 -0500
+
+
+Started POST "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84/trace" for 127.0.0.1 at 2016-01-31 23:24:32 -0500
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:24:36 -0500
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:24:50 -0500
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:25:02 -0500
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:25:15 -0500
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:25:41 -0500
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:26:03 -0500
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:26:24 -0500
+
+
+Started PUT "/console/repl_sessions/e28583ed7f7dd3fb8c4b0d7360247d84" for 127.0.0.1 at 2016-01-31 23:29:43 -0500
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:30:14 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `password' for #<ActionView::Helpers::FormBuilder:0x007f8839251a48>):
+     9:       <%= f.email_field :email, class: 'form-control' %>
+    10: 
+    11:       <%= f.label :password %>
+    12:       <%= f.password :password, class: 'form-control' %>
+    13: 
+    14:       <%= f.submit "Log in", class: "btn btn-primary" %>
+    15:     <% end %>
+  app/views/sessions/new.html.erb:12:in `block in _app_views_sessions_new_html_erb___4042490884683039250_70111525692040'
+  app/views/sessions/new.html.erb:6:in `_app_views_sessions_new_html_erb___4042490884683039250_70111525692040'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (38.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:30:36 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:30:36 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:30:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qk6NOgyJbGBAmiUfsB2u1x8bFCCWrAzdhy4p0WUtJWa5puMnrGXV2yQDBCpDrKZEoex1pcHdYF6yDU+mJGMSJQ==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+  Rendered html template (0.1ms)
+Completed 200 OK in 106ms (Views: 0.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:30:43 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:30:43 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:30:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bFvwWFmiFRtLJ1TGmJ+b7eGFabgl/l9Lww5Oh+t9af9/s55F+U6soC++dfNrLpN+X3IIPXKPM8j2LSjwqjNevA==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
+  Rendered html template (0.0ms)
+Completed 200 OK in 93ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:31:00 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:31:00 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:31:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GOvrWiMmiCH7b0uuiabOlpzd0UwFwFhNDr6wMsIgqEoLA4VHg8oxmp/2apt6F8YFIiqwyVKxNM47ndZFg26fCQ==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 0.2ms)
+
+NameError (undefined local variable or method `give_token' for #<SessionsController:0x007f8834477390>):
+  app/controllers/sessions_controller.rb:13:in `create'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (42.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:34:17 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:34:17 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:34:24 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7oJU17qIut6e7tPVQhSMgMLyDhK6cPHYdfql6Iu/4Wz9ajrKGmQDZfp38uCxpYQTfAVvl+0BnVtA2cOfyvHWLw==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.5ms)
+
+NoMethodError (undefined method `authenticate' for #<User:0x007f8835a4f780>):
+  app/controllers/sessions_controller.rb:13:in `create'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (40.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:35:48 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:35:48 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:35:53 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HRpgJufrIvip2D1+HYS1YXmm2LnNEquN8br5nbJsOIoO8g47RwebQ81BHEvuNb3yx1G5PJpjxw7EmZ/q8yIPyQ==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = '' LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 42ms (Views: 35.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:35:53 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:35:57 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4YTjteCmEXgcNcVuv51tQjAeeSycxvubXX/jHUA0ee3ybI2oQEqow3is5FtMLGXRjukYqcu3lxhoXIVqAXpOrg==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:35:57 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:38:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RMF0Cc+yjnaDoxYQ0mygDzOfjFoNUlOs6OF8nUEm6mhXKRoUb143zec6NyUh3aicjWjt31ojPy/dwhrqAGjdKw==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms)
+
+NoMethodError (undefined method `authenticate' for #<User:0x007f8837877550>):
+  app/controllers/sessions_controller.rb:13:in `create'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (55.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-31 23:58:28 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-01-31 23:58:28 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-01-31 23:58:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2u+A6pk1wOo0P5Rm5zqUQmAG7ySDZfuW/5mDes6u4Cog9AeCohuuMxJ32RoLeLCt3d6OcV8+21u3QB6qnSMww==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `authenticate' for #<User:0x007f8837ba3eb8>):
+  app/controllers/sessions_controller.rb:13:in `create'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.7ms)
+
+
+Started PUT "/console/repl_sessions/8a69c52310d995c1e7571dfbf992d200" for 127.0.0.1 at 2016-01-31 23:58:57 -0500
+
+
+Started POST "/console/repl_sessions/8a69c52310d995c1e7571dfbf992d200/trace" for 127.0.0.1 at 2016-01-31 23:59:00 -0500
+
+
+Started PUT "/console/repl_sessions/8a69c52310d995c1e7571dfbf992d200" for 127.0.0.1 at 2016-01-31 23:59:03 -0500
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 00:01:40 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 00:01:40 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 00:01:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gHhh84rorPsRSb0ZYujuLbGTDv9qiZv1WxpHO0AwZcWTkA/uKgQVQHXQnCyRWea+D2Rvej3493ZuOSFMAX5Shg==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 63ms (Views: 43.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 00:01:47 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 00:01:58 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hUg3gF91BB4xOdoiHdkCGi32wcSy6Sgb7PixpNM8If2WoFmd/5m9pVWg+xfuaAqJkwGgQeWYRJjZ29fTknIWvg==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 00:01:58 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 00:02:47 -0500
+
+ActionController::RoutingError (undefined local variable or method `authenticate' for SessionsController:Class):
+  app/controllers/sessions_controller.rb:8:in `<class:SessionsController>'
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (40.2ms)
+
+
+Started POST "/console/repl_sessions/0025b544af7bbfbc25450285a050de58/trace" for 127.0.0.1 at 2016-02-01 00:02:52 -0500
+
+
+Started GET "/users" for 127.0.0.1 at 2016-02-01 00:03:26 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 65ms (Views: 51.0ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 00:03:27 -0500
+
+
+Started POST "/console/repl_sessions/0025b544af7bbfbc25450285a050de58/trace" for 127.0.0.1 at 2016-02-01 00:03:57 -0500
+
+
+Started PUT "/console/repl_sessions/0025b544af7bbfbc25450285a050de58" for 127.0.0.1 at 2016-02-01 00:04:08 -0500
+
+
+Started POST "/console/repl_sessions/0025b544af7bbfbc25450285a050de58/trace" for 127.0.0.1 at 2016-02-01 00:04:11 -0500
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 00:05:16 -0500
+
+ActionController::RoutingError (undefined local variable or method `authenticate' for SessionsController:Class):
+  app/controllers/sessions_controller.rb:8:in `<class:SessionsController>'
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (56.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 00:05:19 -0500
+
+ActionController::RoutingError (undefined local variable or method `authenticate' for SessionsController:Class):
+  app/controllers/sessions_controller.rb:8:in `<class:SessionsController>'
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (51.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (41.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 00:05:22 -0500
+
+ActionController::RoutingError (undefined local variable or method `authenticate' for SessionsController:Class):
+  app/controllers/sessions_controller.rb:8:in `<class:SessionsController>'
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (47.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (44.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 00:06:03 -0500
+
+ActionController::RoutingError (undefined local variable or method `authenticate' for SessionsController:Class):
+  app/controllers/sessions_controller.rb:8:in `<class:SessionsController>'
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (51.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (40.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 00:06:19 -0500
+
+ActionController::RoutingError (undefined local variable or method `authenticate' for SessionsController:Class):
+  app/controllers/sessions_controller.rb:8:in `<class:SessionsController>'
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 00:06:50 -0500
+
+ActionController::RoutingError (undefined local variable or method `authenticate' for SessionsController:Class):
+  app/controllers/sessions_controller.rb:8:in `<class:SessionsController>'
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (47.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 00:07:19 -0500
+
+ActionController::RoutingError (undefined local variable or method `authenticate' for SessionsController:Class):
+  app/controllers/sessions_controller.rb:8:in `<class:SessionsController>'
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (49.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (40.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 00:07:46 -0500
+
+ActionController::RoutingError (undefined local variable or method `authenticate' for SessionsController:Class):
+  app/controllers/sessions_controller.rb:8:in `<class:SessionsController>'
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (45.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (44.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 44ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/scaffolds.self-b77f75b8588e970aa778dd013b42823ac08256cfa17836cc9b6644fbb7dae468.css?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/users.self-1869f0b848ae4882084920f691f5cfd5566e74c710fa50266b999f8ffbdc9fce.css?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/application.self-df25ab1d0200421bde11d6635db514a177651cde2667ee91835ada31585b3f61.css?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 00:07:57 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 00:08:25 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1m2bOK1aVlvC+60EhcUuV2TlXdMKlBcjkIlHPtGe3Qu326DKMfywsxGCGFlO5ZQ8WjZQMBF0PG33/S/h3k2jmQ==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 60ms (Views: 41.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 00:08:25 -0500
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-02-01 00:09:21 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 00:09:21 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 00:10:54 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HyxvTRbOrJi8iM0+WHYZYOSap8arkKzonDqiQyxGBVJ+mlS/imhKcG/xeGOTVqML2kmqJbBwh6b7TsqcI5V7wA==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 50ms (Views: 38.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 00:10:55 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 00:13:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vmb6Eiyiowm7/FVY1WkJ9VMteK+FObytFuMwUcdqbfrf0MHgsARF4WiF4AUeSbOebf51TJ7Zl+Nxl1iOyLkTaA==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 97ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 00:13:40 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 00:13:40 -0500
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 13:22:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 53ms (Views: 48.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 13:22:48 -0500
+
+
+Started POST "/users/3/books" for 127.0.0.1 at 2016-02-01 13:23:02 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WZBnRxqXuxbUDZDnjLACET06eHf9vEifUOs2uCDXhY84Jly1hjFd/gd0JbpHkLh6A+l1lOZcY9E3n15nLwT7HQ==", "book"=>{"title"=>"lol", "description"=>"lol", "isbn"=>"09809"}, "commit"=>"Create Book", "user_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `books` (`title`, `description`, `isbn`, `user_id`, `created_at`, `updated_at`) VALUES ('lol', 'lol', '09809', 3, '2016-02-01 18:23:02', '2016-02-01 18:23:02')
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 12ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 13:23:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 13:23:02 -0500
+
+
+Started GET "/books" for 127.0.0.1 at 2016-02-01 13:26:08 -0500
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.3ms)[0m  SELECT `books`.* FROM `books`
+  Rendered books/index.html.erb within layouts/application (21.6ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `book_path' for #<#<Class:0x007f8834dc27b0>:0x007f8834a76228>):
+    18:         <td><%= book.title %></td>
+    19:         <td><%= book.description %></td>
+    20:         <td><%= book.isbn %></td>
+    21:         <td><%= link_to 'Show', book %></td>
+    22:         <td><%= link_to 'Edit', edit_book_path(book) %></td>
+    23:         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    24:       </tr>
+  app/views/books/index.html.erb:21:in `block in _app_views_books_index_html_erb__1504048505177129230_70111487830040'
+  app/views/books/index.html.erb:16:in `_app_views_books_index_html_erb__1504048505177129230_70111487830040'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (42.3ms)
+
+
+Started GET "/book" for 127.0.0.1 at 2016-02-01 13:26:35 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (34.5ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `edit_book_path' for #<#<Class:0x007f883632e090>:0x007f883635a370>):
+    19:         <td><%= book.description %></td>
+    20:         <td><%= book.isbn %></td>
+    21:         <td><%= link_to 'Show', book %></td>
+    22:         <td><%= link_to 'Edit', edit_book_path(book) %></td>
+    23:         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    24:       </tr>
+    25:     <% end %>
+  app/views/books/index.html.erb:22:in `block in _app_views_books_index_html_erb__1504048505177129230_70111487830040'
+  app/views/books/index.html.erb:16:in `_app_views_books_index_html_erb__1504048505177129230_70111487830040'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.8ms)
+
+
+Started GET "/book" for 127.0.0.1 at 2016-02-01 13:28:23 -0500
+Processing by BooksController#index as HTML
+  Rendered books/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/antoine/Dropbox/UQAM/INM5151/tp/bookUsed/app/views/books/index.html.erb:22: syntax error, unexpected '<'
+        <td>'.freeze;@output_buffer.ap...
+         ^
+/home/antoine/Dropbox/UQAM/INM5151/tp/bookUsed/app/views/books/index.html.erb:22: syntax error, unexpected tCONSTANT, expecting ')'
+..._buffer.append=( #link_to 'Edit', edit_book_path(book) );@ou...
+...                               ^
+/home/antoine/Dropbox/UQAM/INM5151/tp/bookUsed/app/views/books/index.html.erb:23: unknown regexp options - td
+/home/antoine/Dropbox/UQAM/INM5151/tp/bookUsed/app/views/books/index.html.erb:24: syntax error, unexpected '<'
+      </tr>
+       ^
+/home/antoine/Dropbox/UQAM/INM5151/tp/bookUsed/app/views/books/index.html.erb:26: unknown regexp options - tbdy
+/home/antoine/Dropbox/UQAM/INM5151/tp/bookUsed/app/views/books/index.html.erb:27: syntax error, unexpected '<'
+</table>
+ ^
+/home/antoine/Dropbox/UQAM/INM5151/tp/bookUsed/app/views/books/index.html.erb:27: unterminated regexp meets end of file):
+  app/views/books/index.html.erb:22: syntax error, unexpected '<'
+  app/views/books/index.html.erb:22: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/books/index.html.erb:23: unknown regexp options - td
+  app/views/books/index.html.erb:24: syntax error, unexpected '<'
+  app/views/books/index.html.erb:26: unknown regexp options - tbdy
+  app/views/books/index.html.erb:27: syntax error, unexpected '<'
+  app/views/books/index.html.erb:27: unterminated regexp meets end of file
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.5ms)
+
+
+Started GET "/book" for 127.0.0.1 at 2016-02-01 13:28:38 -0500
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.2ms)[0m  SELECT `books`.* FROM `books`
+  Rendered books/index.html.erb within layouts/application (21.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `new_book_path' for #<#<Class:0x007f883632e090>:0x007f88345e0a60>):
+    26: 
+    27: <br>
+    28: 
+    29: <%= link_to 'New Book', new_book_path %>
+  app/views/books/index.html.erb:29:in `_app_views_books_index_html_erb__1504048505177129230_70111485220180'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.1ms)
+
+
+Started GET "/book" for 127.0.0.1 at 2016-02-01 13:28:51 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 43ms (Views: 41.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 13:28:51 -0500

@@ -21,6 +21,8 @@ TODOS:
 [DONE] login page
 [] make it include bootstrap.css to every template
 [] add static page routeur
+[] add serches
+[] add sessions
 [] etc ...
 
 rails generate scaffold User password:string email:string

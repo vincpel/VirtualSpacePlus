@@ -5,21 +5,20 @@ class SessionsController < ApplicationController
 
 
 
-  def login
-    @user = User.find_by_email(params[:email])
-    if @user.password == params[:password]
-      give_token
-    else
-      redirect_to home_url
-    end
-  end
+
 
   def create
-    @user = User.find_by_email(params[:email])
-    if @user.password == params[:password]
-      render html: 'ok'
+    user = User.find_by_email(params[:session][:email])
+    #if @user.password == params[:session][:password]
+    if user && user.authenticate(params[:session][:password])
+      #give_token
+      log_in user
+      redirect_to user
+      #render html: 'ok'
     else
-      render html: 'not ok'
+      flash[:danger] = 'Invalid email/password combination' # Not quite right!
+      render 'new'
+      #redirect_to home_url
     end
   end
 
