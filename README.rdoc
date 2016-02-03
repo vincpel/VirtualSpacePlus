@@ -22,7 +22,7 @@ TODOS:
 [] make it include bootstrap.css to every template
 [] add static page routeur
 [] add serches
-[] add sessions
+[PEND] add sessions / insert to code iflogin(user)
 [] etc ...
 
 rails generate scaffold User password:string email:string

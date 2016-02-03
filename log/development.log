@@ -9375,3 +9375,1223 @@ Completed 200 OK in 43ms (Views: 41.6ms | ActiveRecord: 0.2ms)
 
 
 Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 13:28:51 -0500
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 13:31:15 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 79ms (Views: 61.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 13:31:15 -0500
+
+
+Started POST "/users/3/books" for 127.0.0.1 at 2016-02-01 13:31:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XwV72ysNPf51Jebsd3/zRAHiMNfqFMDdsgfkeZiAwGA+s0Apt6vbFqZcU7G8X0kvPzE9NPH065PVc4yml1O+8g==", "book"=>{"title"=>"dasdas", "description"=>"asdasd", "isbn"=>"213213"}, "commit"=>"Create Book", "user_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `books` (`title`, `description`, `isbn`, `user_id`, `created_at`, `updated_at`) VALUES ('dasdas', 'asdasd', '213213', 3, '2016-02-01 18:31:23', '2016-02-01 18:31:23')
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 13ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 13:31:23 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 13:31:23 -0500
+
+
+Started POST "/users/3/books" for 127.0.0.1 at 2016-02-01 14:42:21 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fHaIKMQhlFL0L60oIBDqgYgI7KqMkMLIPB6WtmyrxgYdwLPaWIdyuidWGHXrMFDqttvhSZdw6YZbav5pY3i4lA==", "book"=>{"title"=>"<script>alert('test');", "description"=>"<script>alert('test');", "isbn"=>"22"}, "commit"=>"Create Book", "user_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `books` (`title`, `description`, `isbn`, `user_id`, `created_at`, `updated_at`) VALUES ('<script>alert(\'test\');', '<script>alert(\'test\');', '22', 3, '2016-02-01 19:42:21', '2016-02-01 19:42:21')
+  [1m[36m (3.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 13ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 14:42:21 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:42:22 -0500
+
+
+Started POST "/users/3/books" for 127.0.0.1 at 2016-02-01 14:44:10 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KkzYTTkwTfhF8vH6pXHuq4ctkJx8Nwzq1U3tIM8+YXZL+uO/pZarEJaLRKduUVTAuf6df2fXJ6SyOYX/wO0f5A==", "book"=>{"title"=>" <p>sdasd</p>", "description"=>" <p>sdasd</p>", "isbn"=>"132123"}, "commit"=>"Create Book", "user_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `books` (`title`, `description`, `isbn`, `user_id`, `created_at`, `updated_at`) VALUES (' <p>sdasd</p>', ' <p>sdasd</p>', '132123', 3, '2016-02-01 19:44:10', '2016-02-01 19:44:10')
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 12ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 14:44:10 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:44:10 -0500
+
+
+Started POST "/users/3/books" for 127.0.0.1 at 2016-02-01 14:45:20 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QLcZjZHCfQw8Ng2rNj1HNttzDARQd7jGRtnR3DWBDqkhASJ/DWSb5O9PuPb9Hf1d5aAB50uXk4ghrbkDOlJwOw==", "book"=>{"title"=>"<script src=http://www.example.com/malicious-code.js></script>", "description"=>"<script src=http://www.example.com/malicious-code.js></script>\r\n", "isbn"=>"32123"}, "commit"=>"Create Book", "user_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `books` (`title`, `description`, `isbn`, `user_id`, `created_at`, `updated_at`) VALUES ('<script src=http://www.example.com/malicious-code.js></script>', '<script src=http://www.example.com/malicious-code.js></script>\r\n', '32123', 3, '2016-02-01 19:45:20', '2016-02-01 19:45:20')
+  [1m[36m (5.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 14ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 14:45:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:45:20 -0500
+
+
+Started POST "/users/3/books" for 127.0.0.1 at 2016-02-01 14:45:43 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UjfFeD5a+G90F2jO/eDCLAzVrQQJVXi8C/Aq89dZXG4zgf6Kovweh6du3ZM2wHhHMgag5xK1U/JshEIs2Ioi/A==", "book"=>{"title"=>"%3cscript src=http://www.example.com/malicious-code.js%3e%3c/script%3e", "description"=>"%3cscript src=http://www.example.com/malicious-code.js%3e%3c/script%3e", "isbn"=>"213"}, "commit"=>"Create Book", "user_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `books` (`title`, `description`, `isbn`, `user_id`, `created_at`, `updated_at`) VALUES ('%3cscript src=http://www.example.com/malicious-code.js%3e%3c/script%3e', '%3cscript src=http://www.example.com/malicious-code.js%3e%3c/script%3e', '213', 3, '2016-02-01 19:45:43', '2016-02-01 19:45:43')
+  [1m[36m (4.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 11ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 14:45:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:45:43 -0500
+
+
+Started POST "/users/3/books" for 127.0.0.1 at 2016-02-01 14:46:09 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l9zCyHyrKacwg7Wf3IJWcdbmcu5urF7HgPgO/zMmolv2avk64A3PT+P6AMIXouwa6DV/DXVMdYnnjGYgPPXcyQ==", "book"=>{"title"=>"\\x3cscript src=http://www.example.com/malicious-code.js\\x3e\\x3c/script\\x3e", "description"=>"\\x3cscript src=http://www.example.com/malicious-code.js\\x3e\\x3c/script\\x3e", "isbn"=>"321321"}, "commit"=>"Create Book", "user_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `books` (`title`, `description`, `isbn`, `user_id`, `created_at`, `updated_at`) VALUES ('\\x3cscript src=http://www.example.com/malicious-code.js\\x3e\\x3c/script\\x3e', '\\x3cscript src=http://www.example.com/malicious-code.js\\x3e\\x3c/script\\x3e', '321321', 3, '2016-02-01 19:46:09', '2016-02-01 19:46:09')
+  [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 12ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 14:46:09 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:46:09 -0500
+
+
+Started POST "/users/3/books" for 127.0.0.1 at 2016-02-01 14:47:47 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LU/YQmfy2gDa7phTkq/5cuWLqpHzvxsEnsyh4wDs9ZRM+eOw+1Q86AmXLQ5Zj0MZ21incuhfMEr5uMk8Dz+LBg==", "book"=>{"title"=>">\"><script>alert(\"XSS\")</script>&", "description"=>">\"><script>alert(\"XSS\")</script>&", "isbn"=>"321321"}, "commit"=>"Create Book", "user_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `books` (`title`, `description`, `isbn`, `user_id`, `created_at`, `updated_at`) VALUES ('>\"><script>alert(\"XSS\")</script>&', '>\"><script>alert(\"XSS\")</script>&', '321321', 3, '2016-02-01 19:47:47', '2016-02-01 19:47:47')
+  [1m[36m (3.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 8ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 14:47:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:47:47 -0500
+
+
+Started POST "/users/3/books" for 127.0.0.1 at 2016-02-01 14:48:07 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"br3hYQR+cej7XYb8JbE0dI6jXImr9LvSXpcYHFP5ZtwPC9qTmNiXACgkM6HukY4fsHBRarAUkJw543DDXCoYTg==", "book"=>{"title"=>">\"'><img%20src%3D%26%23x6a;%26%23x61;%26%23x76;%26%23x61;%26%23x73;%26%23x63;%26%23x72;%26%23x69;%26%23x70;%26%23x74;%26%23x3a;  alert(%26quot;%26%23x20;XSS%26%23x20;Test%26%23x20;Successful%26quot;)>", "description"=>">\"'><img%20src%3D%26%23x6a;%26%23x61;%26%23x76;%26%23x61;%26%23x73;%26%23x63;%26%23x72;%26%23x69;%26%23x70;%26%23x74;%26%23x3a;\r\n alert(%26quot;%26%23x20;XSS%26%23x20;Test%26%23x20;Successful%26quot;)>", "isbn"=>"321321"}, "commit"=>"Create Book", "user_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `books` (`title`, `description`, `isbn`, `user_id`, `created_at`, `updated_at`) VALUES ('>\"\'><img%20src%3D%26%23x6a;%26%23x61;%26%23x76;%26%23x61;%26%23x73;%26%23x63;%26%23x72;%26%23x69;%26%23x70;%26%23x74;%26%23x3a;  alert(%26quot;%26%23x20;XSS%26%23x20;Test%26%23x20;Successful%26quot;)>', '>\"\'><img%20src%3D%26%23x6a;%26%23x61;%26%23x76;%26%23x61;%26%23x73;%26%23x63;%26%23x72;%26%23x69;%26%23x70;%26%23x74;%26%23x3a;\r\n alert(%26quot;%26%23x20;XSS%26%23x20;Test%26%23x20;Successful%26quot;)>', '321321', 3, '2016-02-01 19:48:07', '2016-02-01 19:48:07')
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 10ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 14:48:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:48:07 -0500
+
+
+Started GET "/users/3%20OR" for 127.0.0.1 at 2016-02-01 14:50:28 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3 OR"}
+  [1m[35mUser Load (1.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 47ms (Views: 43.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:50:28 -0500
+
+
+Started GET "/users/3&OR" for 127.0.0.1 at 2016-02-01 14:50:39 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3&OR"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 47ms (Views: 45.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:50:39 -0500
+
+
+Started GET "/users/where" for 127.0.0.1 at 2016-02-01 14:50:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"where"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 0 LIMIT 1
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=where):
+  app/controllers/users_controller.rb:64:in `set_user'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (42.7ms)
+
+
+Started GET "/users/select" for 127.0.0.1 at 2016-02-01 14:51:10 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"select"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=select):
+  app/controllers/users_controller.rb:64:in `set_user'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.9ms)
+
+
+Started POST "/users/3/books" for 127.0.0.1 at 2016-02-01 14:53:20 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x4EbAWcS6O4yMLNotY0J0IEzRhISqAi/K4+K3Bqwl8ymNyDz+7QOBuFJBjV+rbO7v+BL8QlII/FM++IDFWPpXg==", "book"=>{"title"=>"OR", "description"=>"", "isbn"=>""}, "commit"=>"Create Book", "user_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `books` (`title`, `description`, `isbn`, `user_id`, `created_at`, `updated_at`) VALUES ('OR', '', '', 3, '2016-02-01 19:53:20', '2016-02-01 19:53:20')
+  [1m[36m (3.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 12ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 14:53:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:53:21 -0500
+
+
+Started POST "/users/3/books" for 127.0.0.1 at 2016-02-01 14:54:05 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OeqHfsjvajxdy/w4Hs/Dd607P0Od8Pt7zEJ3v4YRHq5YXLyMVEmM1I6ySWXV73kck+gyoIYQ0DWrNh9gicJgPA==", "book"=>{"title"=>"OR')", "description"=>"", "isbn"=>""}, "commit"=>"Create Book", "user_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `books` (`title`, `description`, `isbn`, `user_id`, `created_at`, `updated_at`) VALUES ('OR\')', '', '', 3, '2016-02-01 19:54:05', '2016-02-01 19:54:05')
+  [1m[36m (4.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 14ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 14:54:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:54:05 -0500
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 14:54:23 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 14:54:25 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OV5AaD+3Kr7lLWAF3YlcA7Ffx3hj74WvH20WdFVyuoJY6HuaoxHMVjZU1VgWqeZoj4zKm3gPruF4GX6rWqHEEA==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 90ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 14:54:25 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3
+  Rendered users/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 14:54:25 -0500
+
+
+Started GET "/users/3ll" for 127.0.0.1 at 2016-02-01 15:00:36 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3ll"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3
+  Rendered users/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:00:36 -0500
+
+
+Started GET "/users/33" for 127.0.0.1 at 2016-02-01 15:00:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 33 LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=33):
+  app/controllers/users_controller.rb:64:in `set_user'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (41.3ms)
+
+
+Started GET "/users/33_" for 127.0.0.1 at 2016-02-01 15:00:55 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"33_"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 33 LIMIT 1
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=33_):
+  app/controllers/users_controller.rb:64:in `set_user'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (44.2ms)
+
+
+Started GET "/users/3_" for 127.0.0.1 at 2016-02-01 15:00:58 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3_"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3
+  Rendered users/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:00:58 -0500
+
+
+Started GET "/users/a3_" for 127.0.0.1 at 2016-02-01 15:01:13 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"a3_"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=a3_):
+  app/controllers/users_controller.rb:64:in `set_user'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (43.6ms)
+
+
+Started GET "/users/DELETE" for 127.0.0.1 at 2016-02-01 15:01:35 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"DELETE"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 0 LIMIT 1
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=DELETE):
+  app/controllers/users_controller.rb:64:in `set_user'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (43.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 15:02:07 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 33ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:02:08 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 15:02:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2hloR6q6GmM/equOtfK9TYFxK/0jCXDbZyPl7uB21mO7r1O1Nhz8i+wDHtN+0gcmv6ImHjjpW5UAV40x76Wo8Q==", "session"=>{"email"=>"lol@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'lol@gmail.com' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:02:23 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 15:03:31 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YbU6l51CRM732TWOaf4kuDD0cA1xkT2UO96klv621EQAAwFlAeSiJiSggNOi3p7TDid97mpxFtpcqsxJ8WWq1g==", "session"=>{"email"=>"lol@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'lol@gmail.com' LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:03:31 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YbU6l51CRM732TWOaf4kuDD0cA1xkT2UO96klv621EQAAwFlAeSiJiSggNOi3p7TDid97mpxFtpcqsxJ8WWq1g==", "session"=>{"email"=>"lol@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'lol@gmail.com' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/scaffolds.self-b77f75b8588e970aa778dd013b42823ac08256cfa17836cc9b6644fbb7dae468.css?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/users.self-1869f0b848ae4882084920f691f5cfd5566e74c710fa50266b999f8ffbdc9fce.css?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/application.self-df25ab1d0200421bde11d6635db514a177651cde2667ee91835ada31585b3f61.css?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:03:40 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 15:03:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oBGYxAma34Fw9stLDEl/8Qu025mJlbAda/YPV78ZzWrBp6M2lTw5aaOPfhbHacWaNWfWepJ1m1MMgmeIsMqz+A==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 98ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 15:03:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3
+  Rendered users/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:03:50 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 15:05:24 -0500
+Processing by SessionsController#create as HTML
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/sessions_controller.rb:11:in `create'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (43.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 15:06:24 -0500
+Processing by SessionsController#create as HTML
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/sessions_controller.rb:11:in `create'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (27.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (55.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 15:13:39 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 57ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:13:39 -0500
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/users.self-1869f0b848ae4882084920f691f5cfd5566e74c710fa50266b999f8ffbdc9fce.css?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/scaffolds.self-b77f75b8588e970aa778dd013b42823ac08256cfa17836cc9b6644fbb7dae468.css?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/application.self-df25ab1d0200421bde11d6635db514a177651cde2667ee91835ada31585b3f61.css?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:13:51 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-01 15:13:54 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rNHvcWiGvy2tXHLMonhU4emsZD3wVQYMVkjs+QDTe8PNZ9SD9CBZxX4lx5FpWO6K139p3uu1LUIxPIQmDwAFUQ==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 96ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 15:13:54 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:13:54 -0500
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 15:22:36 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:22:36 -0500
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-01 15:22:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 49ms (Views: 45.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-01 15:22:43 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-02 19:42:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+ActionController::RoutingError (uninitialized constant StaticPagesController):
+  activesupport (4.2.5) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.5) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.5) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.5) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.5) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:72:in `controller_reference'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:62:in `controller'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:41:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/antoine/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/antoine/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/antoine/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.7ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (63.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (46.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-02 19:42:38 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 313ms (Views: 312.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/scaffolds.self-b77f75b8588e970aa778dd013b42823ac08256cfa17836cc9b6644fbb7dae468.css?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/application.self-df25ab1d0200421bde11d6635db514a177651cde2667ee91835ada31585b3f61.css?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/users.self-1869f0b848ae4882084920f691f5cfd5566e74c710fa50266b999f8ffbdc9fce.css?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:42:39 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-02 19:43:19 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9j7kf3K3W+EkVGGobkO7e1qYe2qHE6cxDUvPlny71J9zgjT3RW4Wp71JhFHY4NIZnq+kcSqTuvIU3uyYVZTtnw==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 162ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-02 19:43:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mBook Load (0.4ms)[0m  SELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3
+  Rendered users/show.html.erb within layouts/application (73.4ms)
+Completed 200 OK in 134ms (Views: 125.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:43:19 -0500
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-02 19:50:28 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.2ms)
+
+NameError (undefined local variable or method `log_in_url' for #<UsersController:0x007f998841c660>):
+  app/controllers/users_controller.rb:18:in `show'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (38.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-02 19:50:39 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.0ms)
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/helpers/sessions_helper.rb:4:in `log_in'
+  app/controllers/users_controller.rb:18:in `show'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-02 19:51:40 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 13ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-02 19:51:40 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:51:41 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-02 19:51:48 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aX5mPBghpZ2ctsQIuQOYSfz/x85r9ZU/435VxRosQxvswra0L/jo2wWrIfEPoPErOMgY1cZ1iPz663bLMwN6Gw==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 107ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-02 19:51:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-02 19:51:48 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:51:48 -0500
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-02 19:52:00 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:52:00 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-02 19:52:06 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LYCW7cxwPIB9VpbjEQlMRW6HVmRjdmKnR0ud5O5q3xGoPEZl+6lxxuRLcxqnqiUnqrCJf872f2Re3r7qx0XmEQ==", "session"=>{"email"=>"vincpel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'vincpel@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 114ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-02 19:52:06 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+NameError (undefined local variable or method `login_url_' for #<UsersController:0x007f99884efe48>):
+  app/controllers/users_controller.rb:18:in `show'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.1ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.8ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.6ms)
+
+
+Started POST "/users/console/repl_sessions/ae21f49153f6ea6426646856bab5dd08/trace" for 127.0.0.1 at 2016-02-02 19:52:35 -0500
+
+
+Started PUT "/users/console/repl_sessions/ae21f49153f6ea6426646856bab5dd08" for 127.0.0.1 at 2016-02-02 19:52:40 -0500
+
+
+Started PUT "/users/console/repl_sessions/ae21f49153f6ea6426646856bab5dd08" for 127.0.0.1 at 2016-02-02 19:52:52 -0500
+
+
+Started PUT "/users/console/repl_sessions/ae21f49153f6ea6426646856bab5dd08" for 127.0.0.1 at 2016-02-02 19:53:07 -0500
+
+
+Started PUT "/users/console/repl_sessions/ae21f49153f6ea6426646856bab5dd08" for 127.0.0.1 at 2016-02-02 19:53:25 -0500
+
+
+Started PUT "/users/console/repl_sessions/ae21f49153f6ea6426646856bab5dd08" for 127.0.0.1 at 2016-02-02 19:54:56 -0500
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-02 19:55:28 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 68ms (Views: 54.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:55:28 -0500
+
+
+Started GET "/users/4" for 127.0.0.1 at 2016-02-02 19:55:35 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+NameError (undefined local variable or method `login_url_' for #<UsersController:0x007f998df0fc70>):
+  app/controllers/users_controller.rb:18:in `show'
+
+
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.0ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.2ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/antoine/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (43.3ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2016-02-02 19:55:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 10ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-02 19:55:43 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:55:43 -0500
+
+
+Started GET "/users/4" for 127.0.0.1 at 2016-02-02 19:57:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+Redirected to http://localhost:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-02 19:57:49 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:57:49 -0500
+
+
+Started GET "/users/4" for 127.0.0.1 at 2016-02-02 19:57:56 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-02 19:57:56 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:57:56 -0500
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-02 19:58:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 3[0m
+  Rendered users/show.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:58:07 -0500
+
+
+Started GET "/users" for 127.0.0.1 at 2016-02-02 19:59:07 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 61ms (Views: 54.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:59:08 -0500
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-02-02 19:59:10 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-02-02 19:59:32 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"jesus@paradise.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`email`, `password_hash`, `created_at`, `updated_at`) VALUES ('jesus@paradise.com', '$2a$10$K9yyRbrEkeDjLqgpUD87yuWTtYVoNWTbPtjmgjlxoM8EAHpJAZJSy', '2016-02-03 00:59:32', '2016-02-03 00:59:32')
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 106ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-02-02 19:59:32 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:59:32 -0500
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-02 19:59:43 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 19:59:43 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-02 20:00:04 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bXYXMxbwbCGr/Z5hF6rPm4vqTJAvcgMqPLZedguM5Qnoyse7ISkhZzLge5ihCab5T92Ti4LyHuklI314IqPcCQ==", "session"=>{"email"=>"jesus@god.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'jesus@god.com' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 20:00:04 -0500
+
+
+Started GET "/users" for 127.0.0.1 at 2016-02-02 20:00:13 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 20:00:14 -0500
+
+
+Started GET "/login" for 127.0.0.1 at 2016-02-02 20:00:24 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 20:00:24 -0500
+
+
+Started POST "/login" for 127.0.0.1 at 2016-02-02 20:00:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sKrb6BrGqFElF2vWRD/9/zSq3lNtSLykW3V+PZzLlmQ1FgtgLR/lF7wKji/ynJSd8J0BSMDIoWdC4F0zteSvZA==", "session"=>{"email"=>"jesus@paradise.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'jesus@paradise.com' LIMIT 1[0m
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 100ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2016-02-02 20:00:38 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 5[0m
+  Rendered users/show.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 61ms (Views: 57.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 20:00:38 -0500
+
+
+Started GET "/users/5" for 127.0.0.1 at 2016-02-02 20:02:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 5[0m
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 20:02:05 -0500
+
+
+Started GET "/users/5" for 127.0.0.1 at 2016-02-02 20:05:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 5[0m
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-02-02 20:05:46 -0500
