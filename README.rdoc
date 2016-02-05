@@ -24,6 +24,10 @@ TODOS:
 [] add serches
 [PEND] add sessions / insert to code iflogin(user)
 [] etc ...
+[] Migrate book class to a sub-class of add
+commande utile pour generer le projet
+rails generate model add title:string description:text user:reference
+rails generate model electronic add:references{polymorphic}
 
 rails generate scaffold User password:string email:string
 rails generate scaffold Book title:string description:text isbn:string

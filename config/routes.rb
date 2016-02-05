@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   get    'login'   => 'sessions#new'
   resources :users do
-    resources :books
+    #resources :books
+    resources :adds
   end
 
   #get 'session/new'

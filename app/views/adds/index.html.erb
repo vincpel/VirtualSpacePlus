@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Adds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adds.each do |add| %>
+      <tr>
+        <td><%= link_to 'Show', add %></td>
+        <td><%= link_to 'Edit', edit_add_path(add) %></td>
+        <td><%= link_to 'Destroy', add, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Add', new_add_path %>
