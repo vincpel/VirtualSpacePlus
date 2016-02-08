@@ -7,19 +7,10 @@
   <%= @user.email %>
 </p>
 
-<h2>books</h2>
-<% @user.books.each do |book| %>
-  <p>
-    <strong>title:</strong>
-    <%= book.title %>
-    <strong>isbn:</strong>
-    <%= book.isbn %>
-  </p>
-  <% end %>
-
+<%= render 'user_adds' %>
 
   <h2>Add a book:</h2>
-<%= form_for([@user, @user.books.build]) do |f| %>
+<%= form_for([@user, @user.adds.build]) do |f| %>
 
   <p>
     <%= f.label :title %><br>
@@ -29,10 +20,7 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </p>
-  <p>
-    <%= f.label :isbn %><br>
-    <%= f.text_field :isbn %>
-  </p>
+
   <p>
     <%=  f.submit class: "btn  btn-primary" %>
   </p>

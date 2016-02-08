@@ -24,17 +24,19 @@ class AddsController < ApplicationController
   # POST /adds
   # POST /adds.json
   def create
-    @add = Add.new(add_params)
-
-    respond_to do |format|
-      if @add.save
-        format.html { redirect_to @add, notice: 'Add was successfully created.' }
-        format.json { render :show, status: :created, location: @add }
-      else
-        format.html { render :new }
-        format.json { render json: @add.errors, status: :unprocessable_entity }
-      end
-    end
+    @user = User.find(params[:user_id])
+    @add = @user.adds.create(params.require(:add).permit(:title, :description))
+    redirect_to user_path(@user)
+    #@add = Add.new(add_params)
+    #respond_to do |format|
+    #  if @add.save
+    #    format.html { redirect_to @add, notice: 'Add was successfully created.' }
+    #    format.json { render :show, status: :created, location: @add }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @add.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /adds/1
@@ -55,10 +57,14 @@ class AddsController < ApplicationController
   # DELETE /adds/1.json
   def destroy
     @add.destroy
-    respond_to do |format|
-      format.html { redirect_to adds_url, notice: 'Add was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to user_path(@add.user)
+
+    #respond_to do |format|
+    #  format.html { redirect_to adds_url, notice: 'Add was successfully destroyed.' }
+    #  format.json { head :no_content }
+    #end
+
+
   end
 
   private

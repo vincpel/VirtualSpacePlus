@@ -2,3 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
+
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.td_title{
+  width: 20%;
+
+}
+
+.nostretch{
+  width: 40%;
+  background-color: silver;
+}

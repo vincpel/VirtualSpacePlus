@@ -1,0 +1,23 @@
+
+
+<div>
+  <h2>adds</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>description</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @user.adds.each do |add| %>
+      <tr>
+        <td class="td_title" ><%= add.title %></td>
+        <td class="nostretch" ><%= add.description %></td>
+        <td><%= link_to 'Show', add, class: "btn btn-xs btn-primary"  %>
+            <%= link_to 'Edit', edit_add_path(add), class: "btn btn-xs btn-warning" %>
+            <%= link_to 'Destroy', add, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-xs btn-danger" %></td>
+    <% end %>
+    </tbody>
+  </table>
+</div>
