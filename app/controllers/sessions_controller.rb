@@ -4,9 +4,6 @@ class SessionsController < ApplicationController
   end
 
 
-
-
-
   def create
     user = User.find_by_email(params[:session][:email])
     #if @user.password == params[:session][:password]
@@ -23,5 +20,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+
   end
+    
+  
 end

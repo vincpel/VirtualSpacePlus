@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :adds
   include BCrypt
 
-
+  
 
   #def password
   #  @password ||= Password.new(password_hash)
