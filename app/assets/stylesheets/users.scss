@@ -1,7 +1,6 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "bootstrap";
 
 
 table {
@@ -15,6 +14,8 @@ table {
 }
 
 .nostretch{
-  width: 40%;
+  width: 20%;
   background-color: silver;
 }
+
+.w74 { word-wrap: break-word; }
