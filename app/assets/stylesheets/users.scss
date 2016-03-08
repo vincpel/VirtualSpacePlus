@@ -1,0 +1,31 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.td_title{
+  width: 20%;
+
+}
+
+.nostretch{
+  width: 20%;
+  background-color: silver;
+}
+
+.w74 { word-wrap: break-word;
+//	background-color: silver;
+}
+
+.uglyborder{
+	border-color: #4078c0;
+	background-color: #4078c0;
+	border-left: solid;
+	border-right: solid;
+	height: 100%;
+}

@@ -1,0 +1,25 @@
+
+<div class="container">
+ 	<h2>adds</h2>
+        <h1>title</h1>
+        <h1>description</h1>
+	
+	
+	<div class="columns withborder">
+	<div class="one-fourth column">title </div>
+	<div class="one-third column">description </div>
+	<div class="one-third column"> 	no op</div>
+	</div>
+	<% @user.adds.each do |add| %>
+	
+	<div class="columns ">
+		<div class="one-fourth column"> <%= add.title %></div>
+		<div class="one-third column w74 uglyborder"> <%= add.description %></div>
+		<div class="one-third column"> 
+            	   <%= link_to 'Show', add, class: "btn btn-xs btn-primary"  %>
+           	   <%= link_to 'Edit', edit_add_path(add), class: "btn btn-xs btn-warning" %>
+	    	   <%= link_to 'Destroy', add, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-xs btn-danger" %>
+	    	</div>
+    	</div>
+    	<% end %>
+</div>

@@ -1,3 +1,48 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+
+
+
+
+
+<div class="container">
+
+<div class="colums">
+	<div class="one-forth column">
+		<%= render 'nav_bar' %>
+	</div>
+	<div class="three-fourths column">
+            <p id="notice"><%= notice %></p>
+            <p>
+              <strong>Email:</strong>
+              <%= @user.email %>
+            </p>
+            
+            <%= render 'user_adds' %>
+              <h2>Add a book:</h2>
+            <%= form_for([@user, @user.adds.build]) do |f| %>
+            
+              <p>
+                <%= f.label :title %><br>
+                <%= f.text_field :title %>
+              </p>
+              <p>
+                <%= f.label :description %><br>
+                <%= f.text_area :description %>
+              </p>
+            
+              <p>
+                <%=  f.submit class: "btn  btn-primary" %>
+              </p>
+            <% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+	
+	
+	
+	</div>
+
+
+</div>
+
+
+</div>

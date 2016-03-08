@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :books, dependent: :destroy
+  has_many :adds
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
