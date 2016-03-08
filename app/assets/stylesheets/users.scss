@@ -18,4 +18,14 @@ table {
   background-color: silver;
 }
 
-.w74 { word-wrap: break-word; }
+.w74 { word-wrap: break-word;
+//	background-color: silver;
+}
+
+.uglyborder{
+	border-color: #4078c0;
+	background-color: #4078c0;
+	border-left: solid;
+	border-right: solid;
+	height: 100%;
+}
