@@ -7,17 +7,23 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'spring'
+
 group :development, :test do
-  gem 'byebug'
+  gem 'pry'
 end
+
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'spring'
 end
+
 gem 'devise'
 gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
 gem 'pundit'
+
+
+
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
