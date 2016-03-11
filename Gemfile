@@ -20,6 +20,7 @@ end
 gem 'devise'
 gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
+gem 'pg'
 gem 'pundit'
 
 
