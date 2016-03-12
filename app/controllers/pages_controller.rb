@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
 
     def home
-      @railsRoutes =`rake routes`
     end
 
     def help
