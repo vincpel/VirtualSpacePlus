@@ -16,7 +16,6 @@
               <%= @user.email %>
             </p>
             
-            <%= render 'user_adds' %>
               <h2>Add a book:</h2>
             <%= form_for([@user, @user.adds.build]) do |f| %>
             
@@ -34,8 +33,6 @@
               </p>
             <% end %>
 
-	<%= link_to 'Edit', edit_user_path(@user) %> |
-	<%= link_to 'Back', users_path %>
 	
 	</div>
 </div>

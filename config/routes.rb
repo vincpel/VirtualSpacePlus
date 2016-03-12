@@ -1,20 +1,26 @@
 Rails.application.routes.draw do
-  get 'users/u_ads' => 'users#u_ads'
 
+  #resources :visitor 
+  
   root to: 'visitors#index'
   
-  get 'users/home' => 'users#show'
   
-  devise_for :users
 
-  get '/users' =>   'users#show', :as => :user_root
 
   #resources :users
+  
+  devise_for :users, :path => 'accounts'
+  get '/users' =>   'users#show', :as => :user_root
+  get 'users/u_ads' => 'users#u_ads'
   resources :users do
     resources :adds
   end
+  
+  #resources :adds
+  
   resources :adds
   
+
   # try those later 
   #root                'pages#home'
   get    'home'    => 'pages#home'

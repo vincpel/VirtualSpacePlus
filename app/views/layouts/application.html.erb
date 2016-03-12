@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>UsedBook</title>
+  <title>VirtualSpacePlus</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,32 +10,36 @@
 
 <body>
 
+  <header class="masthead">
+    <div class="container">
+       <a href="/" class="masthead-logo">
+         <span class="mega-octicon octicon-package"></span>
+         VirtualSpacePLus
+       </a>
+  
+       <nav class="masthead-nav">
+         <a  href="/">Home</a>
+	 <a  href="/about">About</a>
+	 
+	 <% if user_signed_in? %>
+		<%= render 'layouts/nav_links_for_auth' %>	 	
+	 <% end %>
 
-<header class="masthead">
+       </nav>
+     </div>
+   </header>
+  
   <div class="container">
-     <a href="/" class="masthead-logo">
-       <span class="mega-octicon octicon-package"></span>
-       VirtualSpacePLus
-     </a>
-
-     <nav class="masthead-nav">
-       <a  href="/">Home</a>
-       <a  href="/about">About</a>
-     </nav>
-   </div>
- </header>
-
-<div class="container">
-  <div class="columns">
-    <div class="one-fifth column">
-          <%= yield :navbar %>      
-    </div>
-    <div class="four-fifths column">
-    	<div class="container">
-    	  <%= yield %>
-    	</div>
-    </div>
-</div>
+    <div class="columns">
+      <div class="one-fifth column">
+            <%= yield :navbar %>      
+      </div>
+      <div class="four-fifths column">
+      	<div class="container">
+      	  <%= yield %>
+      	</div>
+      </div>
+  </div>
 
 </body>
 </html>

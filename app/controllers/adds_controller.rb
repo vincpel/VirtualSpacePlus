@@ -14,7 +14,7 @@ class AddsController < ApplicationController
 
   # GET /adds/new
   def new
-    @add = Add.new
+    @user = User.find(current_user.id)
   end
 
   # GET /adds/1/edit

@@ -1,17 +1,18 @@
-<%= form_for(@add) do |f| %>
-  <% if @add.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@add.errors.count, "error") %> prohibited this add from being saved:</h2>
 
-      <ul>
-      <% @add.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<h2>Add a book:</h2>
+<%= form_for([@user, @user.adds.build]) do |f| %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%=  f.submit class: "btn  btn-primary" %>
+  </p>
 <% end %>
+
