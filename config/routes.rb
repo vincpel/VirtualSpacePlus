@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root to: 'visitors#index'
+  
+  get 'users/home' => 'users#show'
+  
   devise_for :users
 
   #resources :users
