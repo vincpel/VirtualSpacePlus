@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'users/u_ads' => 'users#u_ads'
+
   root to: 'visitors#index'
   
   get 'users/home' => 'users#show'
   
   devise_for :users
+
+  get '/users' =>   'users#show', :as => :user_root
 
   #resources :users
   resources :users do

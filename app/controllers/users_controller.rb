@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    authorize User
+    #authorize User
   end
 
   def show
@@ -28,6 +28,12 @@ class UsersController < ApplicationController
     authorize user
     user.destroy
     redirect_to users_path, :notice => "User deleted."
+  end
+
+  def user_ads
+    @user = User.find(current_user.id)
+    authorize @user
+    @user
   end
 
   private
