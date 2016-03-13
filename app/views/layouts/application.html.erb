@@ -10,24 +10,12 @@
 
 <body>
 
-  <header class="masthead">
-    <div class="container">
-       <a href="/" class="masthead-logo">
-         <span class="mega-octicon octicon-package"></span>
-         VirtualSpacePlus
-       </a>
   
-       <nav class="masthead-nav">
-         <a  href="/">Home</a>
-	 <a  href="/about">About</a>
-	 
-	 <% if user_signed_in? %>
+  
+       <div	 class="masthead-nav">
 		<%= render 'layouts/nav_links_for_auth' %>	 	
-	 <% end %>
-
-       </nav>
-     </div>
-   </header>
+       </div>
+   
   
   <div class="container">
     <div class="columns">

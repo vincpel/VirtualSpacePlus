@@ -1,12 +1,18 @@
-<% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
-<% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
-<% end %>
-<% if user_signed_in? %>
-  <% if current_user.try(:admin?) %>
-    <li><%= link_to 'Users', users_path %></li>
-  <% end %>
-<% end %>
+<div class="masthead-nav-main">
+<ul class="masthead-nav-right">
+     <li style="float: left;" ><a href="/">Home</a></li>
+     <li style="float: left;" ><a href="/about">About</a></li>
+   <% if user_signed_in? %>
+     <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+     <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+   <% else %>
+     <li><%= link_to 'Sign in', new_user_session_path %></li>
+     <li><%= link_to 'Sign up', new_user_registration_path %></li>
+   <% end %>
+   <% if user_signed_in? %>
+     <% if current_user.try(:admin?) %>
+       <li><%= link_to 'Users', users_path %></li>
+     <% end %>
+   <% end %>
+</ul>
+</div>
