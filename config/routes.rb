@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
+  #resources :admin 
+
+  get '/users/all' => 'users#index' 
+ 
+       
   #resources :visitor 
   
   root to: 'visitors#index'
   
-  
-
-
   #resources :users
   
   devise_for :users, :path => 'accounts'
