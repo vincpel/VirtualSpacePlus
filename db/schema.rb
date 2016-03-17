@@ -45,16 +45,6 @@ ActiveRecord::Schema.define(version: 20160308134024) do
 
   add_index "adds", ["user_id"], name: "index_adds_on_user_id", using: :btree
 
-  create_table "books", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.string   "isbn",        limit: 255
-    t.integer  "user_id",     limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
-  add_index "books", ["user_id"], name: "index_books_on_user_id", using: :btree
   
 end
 
