@@ -15,12 +15,12 @@ Rails.application.routes.draw do
   get '/users' =>   'users#show', :as => :user_root
   get 'users/u_ads' => 'users#u_ads'
   resources :users do
-    resources :adds
+    resources :ads
   end
   
   #resources :adds
   
-  resources :adds
+  resources :ads
   
 
   # try those later 

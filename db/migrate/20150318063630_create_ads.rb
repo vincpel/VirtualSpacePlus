@@ -6,7 +6,6 @@ class CreateAds < ActiveRecord::Migration
 	    
       t.string   "title",       limit: 255
       t.text     "description", limit: 65535
-      t.string   'type',        null: false
       t.integer  "user_id",     limit: 4
       t.timestamps null: false
     end
