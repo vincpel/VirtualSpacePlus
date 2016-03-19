@@ -26,7 +26,7 @@ class AdsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @ad = @user.ads.new(params.require(:ad).permit(:title, :description))
-    @ad.type = 'book' # we will change this in the futre
+    #@ad.type = 'book' # we will change this in the futre
     @ad.save
     redirect_to user_path(@user)
   end
