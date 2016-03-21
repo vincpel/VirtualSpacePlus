@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   #resources :adds
   
   resources :ads
+  resources :books
+  resources :electronics
   
 
   # try those later 
