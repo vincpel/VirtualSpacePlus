@@ -1,21 +1,26 @@
 
-<div class="container">
-	
-	<% @user.ads.each do |ad| %>
-	<div style="border:1px solid black;">
-		<%=  image_tag(ad.attachment, size: "80", alt: "No images") if ad.attachment?  %>
-
-		<h5>title : </h5>	
-		<p><%= ad.title %></p>
 		
-		<h5>description : </h5>
-		<p class=""> <%= ad.description %></p>
-		
-		<p class=""> 
-            	   <%= link_to 'Show', ad, class: "btn btn-xs btn-primary"  %>
-           	   <%= link_to 'Edit', edit_ad_path(ad), class: "btn btn-xs btn-warning" %>
-	    	   <%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-xs btn-danger" %>
-	    	</p>
-    	<% end %>
+<% @user.ads.each do |ad| %>
+  <table  border="1">
+    <tbody>
+    <tr>
 
-</div>
+	<td>     
+	    <%=  image_tag(ad.attachment, size: "80", alt: "No images") if ad.attachment?  %>
+	</td>
+
+	<td>
+            <%= link_to ad.title, ad  %>
+	    <p class=""> <%= ad.description %></p>
+	 </td>
+
+	<td>	
+              <%= link_to 'Edit', edit_ad_path(ad), class: "btn btn-xs btn-warning" %>
+	      <%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-xs btn-danger" %>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+
