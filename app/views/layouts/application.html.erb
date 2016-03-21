@@ -12,12 +12,13 @@
 
   
   
-       <div	 class="masthead-nav">
-		<%= render 'layouts/nav_links_for_auth' %>	 	
-       </div>
    
   
-  <div class="container">
+<div class="container">
+    <div>
+	<%= render 'layouts/nav_links_for_auth' %>	 	
+    </div>
+
     <div class="columns">
       <div class="one-fifth column">
             <%= yield :navbar %>      
