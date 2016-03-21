@@ -6,7 +6,13 @@
     <%= text_area :ad, :description %><br>
     <%= f.label :ISBN %>
     <%= f.text_field :ISBN %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <p>
+    <%= f.label :attachment %><br>
+    <%= f.file_field :attachment %>
+    </p>
+    
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

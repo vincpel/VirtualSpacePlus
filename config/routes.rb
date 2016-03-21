@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+     
+	
+	# on peut faire sa aussii resources :resumes, only: [:index, :new, :create, :destroy]
   #resources :admin 
 
   get '/users/all' => 'users#index' 

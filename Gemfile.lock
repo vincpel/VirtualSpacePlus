@@ -46,6 +46,11 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -97,6 +102,7 @@ GEM
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
+    railroady (1.4.2)
     rails (4.2.5)
       actionmailer (= 4.2.5)
       actionpack (= 4.2.5)
@@ -164,6 +170,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   byebug
+  carrierwave
   coffee-rails (~> 4.1.0)
   devise
   high_voltage
@@ -173,6 +180,7 @@ DEPENDENCIES
   pg
   pundit
   quiet_assets
+  railroady
   rails (= 4.2.5)
   rails_layout
   sass-rails (~> 5.0)

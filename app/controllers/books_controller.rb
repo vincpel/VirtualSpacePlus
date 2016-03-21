@@ -31,7 +31,8 @@ class BooksController < ApplicationController
     @ad.description = params[:ad][:description]
     @ad.user = current_user
     @ad.book = @book = Book.new()
-    
+    @ad.attachment = params[:book][:attachment]
+
     @book.ad = @ad
     @book.ISBN = params[:book][:ISBN]
     
