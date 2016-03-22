@@ -16,27 +16,20 @@
 @import "primer";
 
 
+
 .masthead{
-	//padding-top: 1rem;
-	//padding-bottom: 1rem;
-	//margin-bottom: 1.5rem;
-	//background-color: black;
-}
-
-.masthead-nav-main ul{
   //display: block;
-  margin: 2px;    
+  background-color: rgb(64, 120, 192);
+  padding: 10px;
+  margin: 10px; 
+  //float: rigth;
 }
 
-.masthead-nav-left li {
-	float: left;
-	display: inline-block;
-	//padding: 8px 0 8px 16px;
-	color: white;
-}
-.masthead-nav-right  li{
-	float: right;
+.masthead a {
+        //float: rigth;
 	display: inline-block;
 	padding: 8px 0 8px 16px;
 	color: white;
+	font-family: Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        font-size: 24px;
 }

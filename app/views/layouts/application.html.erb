@@ -10,25 +10,25 @@
 
 <body>
 
-  
-  
-   
-  
-<div class="container">
-    <div>
-	<%= render 'layouts/nav_links_for_auth' %>	 	
-    </div>
+<header class="masthead">
+    <%= render 'layouts/nav_links_for_auth' %>	 	
+</header>
 
-    <div class="columns">
-      <div class="one-fifth column">
-            <%= yield :navbar %>      
+<div class="container">
+<div class="columns docs-layout">
+      
+      <div class="one-fourth column">
+	<nav class="menu docs-menu">
+	   <%= render 'users/nav_bar' if user_signed_in? %>
+      	</nav>
       </div>
-      <div class="four-fifths column">
-      	<div class="container">
-      	  <%= yield %>
-      	</div>
+
+      <div class="three-fourths column markdown-body"> 
+          <%= yield %>
       </div>
-  </div>
+      
+</div>      
+</div>
 
 </body>
 </html>
