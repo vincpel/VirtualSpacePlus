@@ -14,6 +14,7 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new	   
+    checkUserIsLogedIn?
     @user = current_user
     @ad = Ad.new
     @book = Book.new
@@ -21,11 +22,13 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    checkUserIsLogedIn?
   end
 
   # POST /books
   # POST /books.json
   def create
+    checkUserIsLogedIn?
     @ad = Ad.new()   
     @ad.title = params[:ad][:title]
     @ad.description = params[:ad][:description]
@@ -68,6 +71,7 @@ class BooksController < ApplicationController
   # DELETE /books/1
   # DELETE /books/1.json
   def destroy
+    checkUserIsLogedIn?
     @book.destroy
     respond_to do |format|
       format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }

@@ -5,11 +5,11 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
-  def ifLoggin(user)
-    if session[:user_id] == user.id
-
+  def checkUserIsLogedIn?
+    if 
+      user_signed_in?
     else
-      redirect_to login_url
+      redirect_to new_user_session
     end
   end
 

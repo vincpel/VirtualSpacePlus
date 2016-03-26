@@ -14,16 +14,19 @@ class AdsController < ApplicationController
 
   # GET /adds/new
   def new
+    checkUserIsLogedIn?
     @user = User.find(current_user.id)
   end
 
   # GET /adds/1/edit
   def edit
+    checkUserIsLogedIn?
   end
 
   # POST /adds
   # POST /adds.json
   def create
+    checkUserIsLogedIn?
     @user = User.find(params[:user_id])
     @ad = @user.ads.new(params.require(:ad).permit(:title, :description))
     #@ad.type = 'book' # we will change this in the futre
@@ -34,6 +37,7 @@ class AdsController < ApplicationController
   # PATCH/PUT /adds/1
   # PATCH/PUT /adds/1.json
   def update
+    checkUserIsLogedIn?
     respond_to do |format|
       if @ad.update(add_params)
         format.html { redirect_to @ad, notice: 'Add was successfully updated.' }
@@ -48,6 +52,7 @@ class AdsController < ApplicationController
   # DELETE /adds/1
   # DELETE /adds/1.json
   def destroy
+    checkUserIsLogedIn?
     @ad.destroy
     redirect_to user_path(@ad.user)
 

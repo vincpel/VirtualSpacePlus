@@ -4,6 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   include SessionsHelper
+  
+  
+  def checkUserIsLogedIn?
+    if 
+      user_signed_in?
+    else
+      redirect_to new_user_session_path
+    end
+  end
 
 
 
