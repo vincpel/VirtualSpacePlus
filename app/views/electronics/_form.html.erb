@@ -1,0 +1,22 @@
+<%= form_for(@electronic) do |f| %>
+	
+    <%= label :ad, :title %>
+    <%= text_field :ad, :title %><br>
+    <%= label :ad, :description %>
+    <%= text_area :ad, :description %><br>
+    <%= label :ad, :price %>
+    <%= text_field :ad, :price %><br>
+    <%= f.label :brand %>
+    <%= f.text_field :brand %><br>
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+
+    <p>
+    <%= f.label :attachment %><br>
+    <%= f.file_field :attachment %>
+    </p>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
