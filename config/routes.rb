@@ -20,25 +20,24 @@ Rails.application.routes.draw do
     resources :ads
   end
   
-  #resources :adds
+  #resources :ads
   
   resources :ads
   resources :books
   resources :electronics
-  
+ 
+  #resources :researches
+
+  get    'r'       =>  'researches#index'
+  get    'r/:id'     =>  'researches#show'
+  post   'new_r'   =>  'researches#create' 
 
   # try those later 
-  #root                'pages#home'
   get    'home'    => 'pages#home'
   get    'help'    => 'pages#help'
   get    'about'   => 'pages#about'
   get    'contact' => 'pages#contact'
-  #get    'signup'  => 'users#new'
-  #get    'login'   => 'sessions#new'
-  #post   'login'   => 'sessions#create'
-  #delete 'logout'  => 'sessions#destroy'
   get    'book'    => 'books#index'
-  #get    'login'   => 'sessions#new'
 
   
   

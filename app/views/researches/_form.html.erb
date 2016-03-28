@@ -1,0 +1,8 @@
+<%= form_for(:researches, url: new_r_path, method: :post) do |f| %>
+	<%= f.label :researche %>
+	<%= f.text_field :researche %>
+	<%= f.label :in %>
+	<%= f.select :in, Ad.types %>
+	<%= f.hidden_field :page, {:value => '1'} %>
+	<%= f.submit :value => 'GO' %>
+<% end %>
