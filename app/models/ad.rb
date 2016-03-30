@@ -8,6 +8,11 @@ class Ad < ActiveRecord::Base
 
     self.inheritance_column = nil   # to overide STI
 
+
+    def ad_type
+
+    end
+
     def self.types
       [:all_categories] + reflect_on_all_associations(:belongs_to).map() {|x| x.name} - [:user] 
     end

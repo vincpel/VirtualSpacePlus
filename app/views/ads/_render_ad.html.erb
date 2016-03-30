@@ -1,0 +1,15 @@
+
+<p><%= image_tag(@ad.attachment, size: "80", alt: "No images") if @ad.attachment?  %></td>
+
+<h4>title:</h4>
+<p><%= @ad.title%></p>
+
+<h4>description:</h4>
+<p><%= @ad.description %></p>
+
+<h4>price:</h4>
+<p><%= @ad.price %></p>
+
+
+<h4>user emails:</h4>
+<p><%= @ad.user.email %></p>
