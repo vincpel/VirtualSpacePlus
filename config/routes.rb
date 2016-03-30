@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
      
 	
+  resources :tutorings
 	# on peut faire sa aussii resources :resumes, only: [:index, :new, :create, :destroy]
   #resources :admin 
 
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
   resources :ads
   resources :books
   resources :electronics
+  resources :tutorings
  
   #resources :researches
 
