@@ -1,5 +1,33 @@
+
+
 <p id="notice"><%= notice %></p>
 
 <%= 'listing' %>
-<%= @ads.map() {|x| x.title} %>
+
+
+
+
+<% if @ads==nil? %>
+  <%= 'aucun resulta'%>
+<% else %>
+    <table style="width:100%" border="1">
+      <tr>
+        <td>titre</td>
+        <td>description</td>
+        <td>price</td>
+        <td>user</td>
+      </tr>
+  
+
+  <% @ads.map() do |x| %>
+      <tr>
+        <td><%= link_to x.title, ad_path(x) %></td>
+        <td><%= x.description %></td>
+        <td><%= x.price %></td>
+        <td><%= x.user.email %></td>
+      </tr>
+
+  <% end %>
+    </table> 
+<% end %>
 

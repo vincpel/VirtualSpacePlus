@@ -12,9 +12,9 @@ class ResearchesController < ApplicationController
   def show
     @research = Research.find_by_id(params[:id])
     criterias = eval(@research.criteria) # vulneralbe to sql injection #TODO
-    byebug
-    #...
-    @ads = [Ad.find_by_title(criterias["researche"])]
+    
+    #@ads simplement trouver avec le titre ... pas tres puissant
+    @ads = Ad.where(title:  criterias["researche"])
   end
 
   # GET /researches/new
@@ -29,10 +29,7 @@ class ResearchesController < ApplicationController
   # POST /researches.json
   def create
     @research = Research.create(:criteria => params[:researches].to_s) #TODO vulnerable to sql injeciton
-    
-    @ads = Ad.all
     redirect_to action: "show", id: @research.id
-    
   end
 
   # PATCH/PUT /researches/1
