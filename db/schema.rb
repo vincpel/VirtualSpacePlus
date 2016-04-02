@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160330175814) do
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.integer  "tutoring_id",   limit: 4
+    t.integer  "workgroup_id",   limit: 4
   end
 
   add_index "ads", ["tutoring_id"], name: "index_ads_on_tutoring_id", using: :btree
