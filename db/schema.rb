@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(version: 20160330175814) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+  
+  create_table "workgroups", force: :cascade do |t|
+    t.integer  "ad_id",      limit: 4
+    t.string   "course",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
