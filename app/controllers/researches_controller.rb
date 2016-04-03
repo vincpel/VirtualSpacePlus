@@ -29,6 +29,8 @@ class ResearchesController < ApplicationController
     end
     ads = ads.sort_by { |a| a.price} if criterias['sortby'] == "price"
     ads = ads.sort_by { |a| a.created_at} if criterias['sortby'] == "date"
+    ads = ads.sort_by { |a| a.title} if criterias['sortby'] == "title"
+    ads = ads.sort_by { |a| a.user} if criterias['sortby'] == "user"
     
     @ads = ads
   end
