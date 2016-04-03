@@ -3,7 +3,7 @@ class CreateAds < ActiveRecord::Migration
     create_table :ads do |t|
       t.belongs_to :book
       t.belongs_to :electronic
-	    
+	    t.string   "category" 
       t.string   "title",       limit: 255
       t.text     "description", limit: 65535
       t.decimal  "price"

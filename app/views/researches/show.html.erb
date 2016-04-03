@@ -16,6 +16,7 @@
         <td>titre</td>
         <td>description</td>
         <td>price</td>
+        <td>created_at</td>
         <td>user</td>
       </tr>
   
@@ -26,6 +27,8 @@
         <td><%= link_to x.title, ad_path(x) %></td>
         <td><%= x.description %></td>
         <td><%= x.price %></td>
+        <td><%= x.created_at.strftime("%F") %></td>
+        <td><%= x.user.email %></td>
         <td><%= x.user.email %></td>
       </tr>
 

@@ -36,6 +36,7 @@ class ElectronicsController < ApplicationController
     @ad.user = current_user
     @ad.electronic = @electronic = Electronic.new()
     @ad.attachment = params[:electronic][:attachment]
+    @ad.category = "electronic"
 
     @electronic.ad = @ad
     @electronic.brand = params[:electronic][:brand]

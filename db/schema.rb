@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20160330175814) do
   create_table "ads", force: :cascade do |t|
     t.integer  "book_id",       limit: 4
     t.integer  "electronic_id", limit: 4
+    t.string   "category",      limit: 255
     t.string   "title",         limit: 255
     t.text     "description",   limit: 65535
     t.decimal  "price",                       precision: 10

@@ -36,6 +36,7 @@ class TutoringsController < ApplicationController
     @ad.user = current_user
     @ad.tutoring = @tutoring = Tutoring.new
     @ad.attachment = params[:ad][:attachment]
+    @ad.category = "tutoring"
 
     @tutoring.ad = @ad
     @tutoring.course = params[:tutoring][:course] 

@@ -12,6 +12,7 @@ class Ad < ActiveRecord::Base
     def ad_type
 
     end
+    
 
     def self.types
       [:all_categories] + reflect_on_all_associations(:belongs_to).map() {|x| x.name} - [:user] 

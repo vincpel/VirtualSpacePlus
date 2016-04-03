@@ -31,7 +31,8 @@ Rails.application.routes.draw do
   #resources :researches
 
   get    'r'       =>  'researches#index'
-  get    'r/:id'     =>  'researches#show'
+  get    'r_advc'  =>  'researches#newAdvanced'
+  get    'r/:id'   =>  'researches#show'
   post   'new_r'   =>  'researches#create' 
 
   # try those later 

@@ -10,15 +10,26 @@ class ResearchesController < ApplicationController
   # GET /researches/1
   # GET /researches/1.json
   def show
+    
     @research = Research.find_by_id(params[:id])
     criterias = eval(@research.criteria) # vulneralbe to sql injection #TODO
     
-    #@ads simplement trouver avec le titre ... pas tres puissant
-    @ads = Ad.where(title:  criterias["researche"])
+    if    criterias["in"] == "book"
+      @ads = researchBook(criterias)  
+    elsif criterias["in"] == "electronic"
+      @ads = researchElectronic(criterias)
+    elsif criterias["in"] == "tutoring"
+      @ads = researchTutoring(criterias)
+    else  criterias["in"] == "electronic"
+      @ads = Ad.where(title:  criterias["researche"])
+    end
   end
 
   # GET /researches/new
   def new
+  end
+  
+  def newAdvanced
   end
 
   # GET /researches/1/edit
@@ -32,31 +43,28 @@ class ResearchesController < ApplicationController
     redirect_to action: "show", id: @research.id
   end
 
-  # PATCH/PUT /researches/1
-  # PATCH/PUT /researches/1.json
-  def update
-    respond_to do |format|
-      if @research.update(research_params)
-        format.html { redirect_to @research, notice: 'Research was successfully updated.' }
-        format.json { render :show, status: :ok, location: @research }
-      else
-        format.html { render :edit }
-        format.json { render json: @research.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /researches/1
-  # DELETE /researches/1.json
-  def destroy
-    @research.destroy
-    respond_to do |format|
-      format.html { redirect_to researches_url, notice: 'Research was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
 
   private
+
+    def researchBook(acriteria)
+      @ads = Book.where( ISBN:  acriteria["Book"][":ISBN"]).map do |book|
+        book.ad
+      end
+    end
+
+    def researchTutoring(acriteria)
+      @ads = Tutoring.where( model:  acriteria["tutoring"]["course"]).map do |tuto|
+        tuto.ad
+      end
+    end
+
+    def researchElectronic(acriteria)
+      @ads = Electronic.where( brand:  acriteria["electronic"]["brand"],
+                               model: acriteria["electronic"]["model"] ).map do |elec|
+        elec.ad
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_research
       #@research = Research.find(params[:id])

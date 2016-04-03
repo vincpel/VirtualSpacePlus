@@ -44,3 +44,20 @@ ad2.save
 electronic1.save
 
 puts 'CREATED ELECTRONIC1 ' << ad2.title
+
+ad3 = Ad.new(title: "laptop", description: "laptop pas cher", price: 400)   
+ad3.user = user1
+ad3.electronic = electronic3 = Electronic.new(brand: "HP", model: "sleekbook", ad: ad3 )
+
+ad3.save
+electronic3.save
+
+puts 'CREATED ELECTRONIC1 ' << ad3.title
+
+ad4 = Ad.new(title: "laptop", description: "laptop pas cher", price: 350)   
+ad4.user = user1
+ad4.electronic = electronic4 = Electronic.new(brand: "lenovoo", model: "X1 carbon", ad: ad3 )
+
+ad4.save
+electronic4.save
+puts 'CREATED ELECTRONIC1 ' << ad4.title

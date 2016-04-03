@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= render 'render_ad' %>
+<%= render "#{@ad.category.pluralize}/render_ad" %>
+
+
 

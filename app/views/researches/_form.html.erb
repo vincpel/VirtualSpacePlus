@@ -1,8 +1,19 @@
+<div>
 <%= form_for(:researches, url: new_r_path, method: :post) do |f| %>
+  <div id="advsearch" >
+  </div><br>
 	<%= f.label :researche %>
 	<%= f.text_field :researche %>
 	<%= f.label :in %>
 	<%= f.select :in, Ad.types %>
 	<%= f.hidden_field :page, {:value => '1'} %>
-	<%= f.submit :value => 'GO' %>
+  <%= f.submit :value => 'GO' %>
+   <button id="advbtn" type="button">Advanced</button> </button>
+ 
+  <div id="advsearch" >
+  </div>
 <% end %>
+</div>
+
+
+
