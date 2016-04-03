@@ -21,9 +21,13 @@ class ResearchesController < ApplicationController
       ads = researchElectronic(criterias)
     elsif criterias["in"] == "tutoring"
       ads = researchTutoring(criterias)
-    elsif criterias['researche'] + criterias['researche'] == ""
-      ads = Ad.all.select do |ad|
-        ad.title =~ /#{criterias['researche']}/i || ad.description =~ /#{criterias['researche']}/i 
+    else
+      if criterias['researche'] + criterias['researche'] == ""
+        ads = Ad.all 
+      else
+         ads = Ad.all.select do |ad|
+            ad.title =~ /#{criterias['researche']}/i || ad.description =~ /#{criterias['researche']}/i 
+         end
       end
     end
     
