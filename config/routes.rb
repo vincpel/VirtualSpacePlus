@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   resources :books
   resources :electronics
   resources :tutorings
-  resources :workgroups
+  #resources :workgroups
  
   #resources :researches
 
