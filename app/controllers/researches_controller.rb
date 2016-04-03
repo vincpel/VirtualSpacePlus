@@ -21,17 +21,23 @@ class ResearchesController < ApplicationController
       ads = researchElectronic(criterias)
     elsif criterias["in"] == "tutoring"
       ads = researchTutoring(criterias)
-    else  
+    elsif criterias['researche'] + criterias['researche'] == ""
       ads = Ad.all.select do |ad|
         ad.title =~ /#{criterias['researche']}/i || ad.description =~ /#{criterias['researche']}/i 
       end
     end
+    
+    #reduce with criteria
+    ads = ads.compact.reduce([]) do |memo,ad|
+      ad.title =~ /#{criterias['researche']}/i || ad.description =~ /#{criterias['researche']}/i ? memo << ad : memo 
+    end 
 
     if ads
       ads = ads.sort_by { |a| a.price}      if criterias['sortby'] == "price"
       ads = ads.sort_by { |a| a.created_at} if criterias['sortby'] == "date"
       ads = ads.sort_by { |a| a.title}      if criterias['sortby'] == "title"
     end
+
     
     @ads = ads || []
   end
