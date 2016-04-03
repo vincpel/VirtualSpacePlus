@@ -14,18 +14,18 @@ class ResearchesController < ApplicationController
     @research = Research.find_by_id(params[:id])
     criterias = eval(@research.criteria) # vulneralbe to sql injection #TODO
 
-    @ads = Ad.all
 
-    if criterias["researche"] == ""
-      @ad
-    elsif criterias["in"] == "book"
-      @ads = researchBook(criterias)  
+    if criterias["in"] == "book"
+      @ads = researchBook(criterias) 
+
     elsif criterias["in"] == "electronic"
       @ads = researchElectronic(criterias)
     elsif criterias["in"] == "tutoring"
       @ads = researchTutoring(criterias)
-    else  criterias["in"] == "electronic"
-      @ads = Ad.where(title:  criterias["researche"])
+    else  
+      @ads = Ad.all.select do |ad|
+        ad.title =~ /#{criterias['researche']}/i || ad.description =~ /#{criterias['researche']}/i 
+      end
     end
   end
 
@@ -51,22 +51,34 @@ class ResearchesController < ApplicationController
   private
 
     def researchBook(acriteria)
-      @ads = Book.where( ISBN:  acriteria["Book"][":ISBN"]).map do |book|
-        book.ad
-      end
+      @ads = Tutoring.all.select do |elec|
+         if acriteria["book"]["ISBN"] != ""
+            elec.model =~ /#{acriteria["book"]["ISBN"] }/i
+         end
+      end 
+      @ads.map { |e| e.ad }
     end
 
     def researchTutoring(acriteria)
-      @ads = Tutoring.where( model:  acriteria["tutoring"]["course"]).map do |tuto|
-        tuto.ad
-      end
+      @ads = Tutoring.all.select do |elec|
+         if acriteria["tutoring"]["course"] != ""
+            elec.model =~ /#{acriteria["tutoring"]["course"] }/i
+         end
+      end 
+      @ads.map { |e| e.ad }
     end
 
     def researchElectronic(acriteria)
-      @ads = Electronic.where( brand:  acriteria["electronic"]["brand"],
-                               model: acriteria["electronic"]["model"] ).map do |elec|
-        elec.ad
-      end
+      @ads = Electronic.all.select do |elec|
+         if acriteria["electronic"]["brand"] != ""
+            elec.brand =~ /#{acriteria["electronic"]["brand"] }/i
+         end
+      end +  Electronic.all.select do |elec|
+         if acriteria["electronic"]["model"] != ""
+            elec.model =~ /#{acriteria["electronic"]["model"] }/i
+         end
+      end 
+      @ads.map { |e| e.ad }
     end
 
     # Use callbacks to share common setup or constraints between actions.
