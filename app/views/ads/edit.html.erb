@@ -8,6 +8,10 @@
     <%= text_area :ad, :description %><br>
     <%= label :ad, :price %>
     <%= text_field :ad, :price %><br>
+    <p>
+    <%= f.label :attachment %><br>
+    <%= f.file_field :attachment %>
+    </p>
     <%=  f.submit class: "btn  btn-primary" %>
 
 
