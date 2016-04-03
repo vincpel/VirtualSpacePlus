@@ -13,20 +13,24 @@ class ResearchesController < ApplicationController
     
     @research = Research.find_by_id(params[:id])
     criterias = eval(@research.criteria) # vulneralbe to sql injection #TODO
-
+    ads = nil
 
     if criterias["in"] == "book"
-      @ads = researchBook(criterias) 
+      ads = researchBook(criterias) 
 
     elsif criterias["in"] == "electronic"
-      @ads = researchElectronic(criterias)
+      ads = researchElectronic(criterias)
     elsif criterias["in"] == "tutoring"
-      @ads = researchTutoring(criterias)
+      ads = researchTutoring(criterias)
     else  
-      @ads = Ad.all.select do |ad|
+      ads = Ad.all.select do |ad|
         ad.title =~ /#{criterias['researche']}/i || ad.description =~ /#{criterias['researche']}/i 
       end
     end
+    ads = ads.sort_by { |a| a.price} if criterias['sortby'] == "price"
+    ads = ads.sort_by { |a| a.created_at} if criterias['sortby'] == "date"
+    
+    @ads = ads
   end
 
   # GET /researches/new

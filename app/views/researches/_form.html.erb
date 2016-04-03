@@ -6,12 +6,13 @@
 	<%= f.select :in, Ad.types %>
 	<%= f.hidden_field :page, {:value => '1'} %>
   <%= f.submit :value => 'GO' %>
-   <button id="advbtn" type="button">Advanced</button> 
+	<%= f.label :sortby %>
+	<%= f.select :sortby, ["no sorting","price","date"] %>
+  
+  <p><button id="advbtn" type="button">Advanced</button> </p>
   <div id="advsearch" >
   </div><br>
  
-  <div id="advsearch" >
-  </div>
 <% end %>
 </div>
 
