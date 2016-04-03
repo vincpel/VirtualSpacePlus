@@ -3,6 +3,7 @@ class Ad < ActiveRecord::Base
     belongs_to :book
     belongs_to :electronic
     belongs_to :tutoring
+	belongs_to :workgroup
     
     mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader for this model.
 
