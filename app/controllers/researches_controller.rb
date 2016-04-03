@@ -15,11 +15,9 @@ class ResearchesController < ApplicationController
     criterias = eval(@research.criteria)
     ads = nil
 
-    byebug
     if criterias["in"] == "book"
       ads = researchBook(criterias) 
     elsif criterias["in"] == "electronic"
-      byebug
       ads = researchElectronic(criterias)
     elsif criterias["in"] == "tutoring"
       ads = researchTutoring(criterias)
@@ -95,7 +93,6 @@ class ResearchesController < ApplicationController
         end
       end 
       ads = ads.reduce([]) { |memo, e| e.nil? ? memo : memo << e }
-      byebug
       ads.map { |e| e.ad }
     end
 
