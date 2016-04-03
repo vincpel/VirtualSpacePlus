@@ -28,6 +28,12 @@ function renderAdvancedSearche()
   });
 
 }
-window.onload=function() {
+
+
+var ready;
+ready = function() {
   renderAdvancedSearche();
-}
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
