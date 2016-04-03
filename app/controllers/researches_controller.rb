@@ -13,8 +13,12 @@ class ResearchesController < ApplicationController
     
     @research = Research.find_by_id(params[:id])
     criterias = eval(@research.criteria) # vulneralbe to sql injection #TODO
-    
-    if    criterias["in"] == "book"
+
+    @ads = Ad.all
+
+    if criterias["researche"] == ""
+      @ad
+    elsif criterias["in"] == "book"
       @ads = researchBook(criterias)  
     elsif criterias["in"] == "electronic"
       @ads = researchElectronic(criterias)
