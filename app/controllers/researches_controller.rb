@@ -15,9 +15,11 @@ class ResearchesController < ApplicationController
     criterias = eval(@research.criteria)
     ads = nil
 
+    byebug
     if criterias["in"] == "book"
       ads = researchBook(criterias) 
     elsif criterias["in"] == "electronic"
+      byebug
       ads = researchElectronic(criterias)
     elsif criterias["in"] == "tutoring"
       ads = researchTutoring(criterias)
@@ -26,11 +28,14 @@ class ResearchesController < ApplicationController
         ad.title =~ /#{criterias['researche']}/i || ad.description =~ /#{criterias['researche']}/i 
       end
     end
-    ads = ads.sort_by { |a| a.price}      if criterias['sortby'] == "price"
-    ads = ads.sort_by { |a| a.created_at} if criterias['sortby'] == "date"
-    ads = ads.sort_by { |a| a.title}      if criterias['sortby'] == "title"
+
+    if ads
+      ads = ads.sort_by { |a| a.price}      if criterias['sortby'] == "price"
+      ads = ads.sort_by { |a| a.created_at} if criterias['sortby'] == "date"
+      ads = ads.sort_by { |a| a.title}      if criterias['sortby'] == "title"
+    end
     
-    @ads = ads
+    @ads = ads || []
   end
 
   # GET /researches/new
@@ -84,15 +89,13 @@ class ResearchesController < ApplicationController
         ads = Electronic.all
       else
         ads = Electronic.all.select do |elec|
-          if acriteria["electronic"]["brand"] != ""
-              elec.brand =~ /#{acriteria["electronic"]["brand"] }/i
-          end
+          elec.brand =~ /#{acriteria["electronic"]["brand"] }/i  if acriteria["electronic"]["brand"] != ""
         end +  Electronic.all.select do |elec|
-          if acriteria["electronic"]["model"] != ""
-              elec.model =~ /#{acriteria["electronic"]["model"] }/i
-          end
+          elec.model =~ /#{acriteria["electronic"]["model"] }/i  if acriteria["electronic"]["model"] != ""
         end
       end 
+      ads = ads.reduce([]) { |memo, e| e.nil? ? memo : memo << e }
+      byebug
       ads.map { |e| e.ad }
     end
 
