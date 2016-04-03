@@ -12,7 +12,7 @@ class ResearchesController < ApplicationController
   def show
     
     @research = Research.find_by_id(params[:id])
-    criterias = eval(@research.criteria) # vulneralbe to sql injection #TODO
+    criterias = eval(@research.criteria)
     ads = nil
 
     if criterias["in"] == "book"
@@ -29,6 +29,7 @@ class ResearchesController < ApplicationController
     end
     ads = ads.sort_by { |a| a.price} if criterias['sortby'] == "price"
     ads = ads.sort_by { |a| a.created_at} if criterias['sortby'] == "date"
+    ads = ads.sort_by { |a| a.title} if criterias['sortby'] == "title"
     
     @ads = ads
   end
@@ -47,7 +48,7 @@ class ResearchesController < ApplicationController
   # POST /researches
   # POST /researches.json
   def create
-    @research = Research.create(:criteria => params[:researches].to_s) #TODO vulnerable to sql injeciton
+    @research = Research.create(:criteria => params[:researches].to_s)
     redirect_to action: "show", id: @research.id
   end
 
@@ -85,12 +86,10 @@ class ResearchesController < ApplicationController
       @ads.map { |e| e.ad }
     end
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_research
       #@research = Research.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def research_params
       params.fetch(:research, {})
     end
