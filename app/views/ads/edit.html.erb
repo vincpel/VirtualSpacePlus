@@ -1,6 +1,14 @@
 <h1>Editing Add</h1>
 
-<%= render 'form' %>
+<%= form_for @ads do |f| %>
 
-<%= link_to 'Show', @add %> |
-<%= link_to 'Back', adds_path %>
+    <%= label :ad, :title %>
+    <%= text_field :ad, :title %><br>
+    <%= label :ad, :description %>
+    <%= text_area :ad, :description %><br>
+    <%= label :ad, :price %>
+    <%= text_field :ad, :price %><br>
+    <%=  f.submit class: "btn  btn-primary" %>
+
+
+<% end %>

@@ -21,6 +21,8 @@ class AdsController < ApplicationController
   # GET /adds/1/edit
   def edit
     checkUserIsLogedIn?
+    @user = User.find(current_user.id)
+    @ads = Ad.find(params[:id])
   end
 
   # POST /adds
@@ -39,7 +41,7 @@ class AdsController < ApplicationController
   def update
     checkUserIsLogedIn?
     respond_to do |format|
-      if @ad.update(add_params)
+      if @ad.update(ad_params)
         format.html { redirect_to @ad, notice: 'Add was successfully updated.' }
         format.json { render :show, status: :ok, location: @ad }
       else
@@ -72,6 +74,6 @@ class AdsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ad_params
-      params[:ad]
+      params.require(:ad).permit(:title,:description,:price)
     end
 end
