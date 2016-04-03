@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'spring'
 gem 'carrierwave'
+gem 'rails_12factor'
 group :development, :test do
 	gem 'byebug'
 	gem 'railroady'
