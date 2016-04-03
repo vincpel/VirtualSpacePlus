@@ -12,7 +12,7 @@
 <% else %>
     <table style="width:100%" border="1">
       <tr>
-		<td>categorie</td>
+		    <td>categorie</td>
         <td>picture</td>
         <td>titre</td>
         <td>description</td>
@@ -24,8 +24,8 @@
 
   <% @ads.map() do |x| %>
       <tr>
-	    <td><%=  image_tag(x.attachment, size: "80", alt: "No images") if x.attachment?  %></td>
-		<td><%= x.category %></td>
+		    <td><%= x.category %></td>
+	      <td><%=  image_tag(x.attachment, size: "80", alt: "No images") if x.attachment?  %></td>
         <td><%= link_to x.title, ad_path(x) %></td>
         <td><%= x.description %></td>
         <td><%= x.price %></td>
