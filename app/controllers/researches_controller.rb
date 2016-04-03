@@ -17,7 +17,6 @@ class ResearchesController < ApplicationController
 
     if criterias["in"] == "book"
       ads = researchBook(criterias) 
-
     elsif criterias["in"] == "electronic"
       ads = researchElectronic(criterias)
     elsif criterias["in"] == "tutoring"
@@ -56,9 +55,9 @@ class ResearchesController < ApplicationController
   private
 
     def researchBook(acriteria)
-      @ads = Tutoring.all.select do |elec|
+      @ads = Book.all.select do |elec|
          if acriteria["book"]["ISBN"] != ""
-            elec.model =~ /#{acriteria["book"]["ISBN"] }/i
+            elec.ISBN =~ /#{acriteria["book"]["ISBN"] }/i
          end
       end 
       @ads.map { |e| e.ad }
@@ -67,7 +66,7 @@ class ResearchesController < ApplicationController
     def researchTutoring(acriteria)
       @ads = Tutoring.all.select do |elec|
          if acriteria["tutoring"]["course"] != ""
-            elec.model =~ /#{acriteria["tutoring"]["course"] }/i
+            elec.course =~ /#{acriteria["tutoring"]["course"] }/i
          end
       end 
       @ads.map { |e| e.ad }
