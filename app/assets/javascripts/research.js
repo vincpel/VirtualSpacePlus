@@ -10,7 +10,7 @@ var electronicadvsection = "<label for='researches_brand'>brand:</label>"
 
 function renderAdvancedSearche()
 {
-  var nodes_p = document.getElementById("advbtn");
+  var nodes_p = document.getElementById("researches_in");
 
   nodes_p.addEventListener("click",function(){
     var e = document.getElementById("researches_in");
