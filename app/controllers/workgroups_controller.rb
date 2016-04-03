@@ -1,4 +1,4 @@
-class WorkgroupController < ApplicationController
+class WorkgroupsController < ApplicationController
   before_action :set_workgroup, only: [:show, :edit, :update, :destroy]
 
   # GET /workgroups
