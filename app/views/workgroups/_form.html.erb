@@ -1,0 +1,19 @@
+
+<%= form_for( @workgroup ) do |f| %>
+
+    <%= label :ad, :title %>
+    <%= text_field :ad, :title %><br>
+    <%= label :ad, :description %>
+    <%= text_area :ad, :description %><br>
+    <%= f.label :course %>
+    <%= f.text_field :course %>
+
+    <p>
+    <%= f.label :attachment %><br>
+    <%= f.file_field :attachment %>
+    </p>
+    
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
