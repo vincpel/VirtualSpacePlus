@@ -26,9 +26,9 @@ class ResearchesController < ApplicationController
         ad.title =~ /#{criterias['researche']}/i || ad.description =~ /#{criterias['researche']}/i 
       end
     end
-    ads = ads.sort_by { |a| a.price} if criterias['sortby'] == "price"
+    ads = ads.sort_by { |a| a.price}      if criterias['sortby'] == "price"
     ads = ads.sort_by { |a| a.created_at} if criterias['sortby'] == "date"
-    ads = ads.sort_by { |a| a.title} if criterias['sortby'] == "title"
+    ads = ads.sort_by { |a| a.title}      if criterias['sortby'] == "title"
     
     @ads = ads
   end
@@ -55,34 +55,45 @@ class ResearchesController < ApplicationController
   private
 
     def researchBook(acriteria)
-      @ads = Book.all.select do |elec|
-         if acriteria["book"]["ISBN"] != ""
-            elec.ISBN =~ /#{acriteria["book"]["ISBN"] }/i
-         end
-      end 
-      @ads.map { |e| e.ad }
+      ads = nil
+      if acriteria["book"]["ISBN"] == ""
+        ads = Book.all 
+      else
+        ads = Book.all.select do |elec|
+              elec.ISBN =~ /#{acriteria["book"]["ISBN"] }/i
+        end 
+      end
+      ads.map { |e| e.ad }
     end
 
     def researchTutoring(acriteria)
-      @ads = Tutoring.all.select do |elec|
-         if acriteria["tutoring"]["course"] != ""
+      ads = nil
+      if acriteria["tutoring"]["course"] == ""
+        ads = Tutoring.all
+      else
+        ads = Tutoring.all.select do |elec|
             elec.course =~ /#{acriteria["tutoring"]["course"] }/i
-         end
-      end 
-      @ads.map { |e| e.ad }
+        end 
+      end
+      ads.map { |e| e.ad }
     end
 
     def researchElectronic(acriteria)
-      @ads = Electronic.all.select do |elec|
-         if acriteria["electronic"]["brand"] != ""
-            elec.brand =~ /#{acriteria["electronic"]["brand"] }/i
-         end
-      end +  Electronic.all.select do |elec|
-         if acriteria["electronic"]["model"] != ""
-            elec.model =~ /#{acriteria["electronic"]["model"] }/i
-         end
+      ads = nil
+      if acriteria["electronic"]["brand"] == "" && acriteria["electronic"]["model"] == ""
+        ads = Electronic.all
+      else
+        ads = Electronic.all.select do |elec|
+          if acriteria["electronic"]["brand"] != ""
+              elec.brand =~ /#{acriteria["electronic"]["brand"] }/i
+          end
+        end +  Electronic.all.select do |elec|
+          if acriteria["electronic"]["model"] != ""
+              elec.model =~ /#{acriteria["electronic"]["model"] }/i
+          end
+        end
       end 
-      @ads.map { |e| e.ad }
+      ads.map { |e| e.ad }
     end
 
     def set_research
