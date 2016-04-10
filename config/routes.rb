@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
      
 	
+  resources :comments
   resources :tutorings
 	# on peut faire sa aussii resources :resumes, only: [:index, :new, :create, :destroy]
   #resources :admin 

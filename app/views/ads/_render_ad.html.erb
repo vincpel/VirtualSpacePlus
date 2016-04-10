@@ -1,5 +1,9 @@
 
-<p><%= image_tag(@ad.attachment, size: "80", alt: "No images") if @ad.attachment?  %></td>
+<%= image_tag(@ad.attachment, size: "80", alt: "No images") if @ad.attachment?  %>
+
+
+<h4>id</h4>
+<p id="addid" ><%= @ad.id%></p>
 
 <h4>title:</h4>
 <p><%= @ad.title%></p>
@@ -13,7 +17,7 @@
 <h4>price:</h4>
 <p><%= @ad.price %></p>
 
-
 <h4>user emails:</h4>
 <p><%= @ad.user.email %></p>
+
 

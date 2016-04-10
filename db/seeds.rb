@@ -14,6 +14,13 @@ user1 = User.find_or_create_by!(email: 'martin@vsplus.com') do |user|
 end
 puts 'CREATED DUMMY USER ' << user1.email
 
+
+user1 = User.find_or_create_by!(email: 'annonymous@vsplus.com') do |user|
+        user.password = "password"
+        user.password_confirmation = "password"
+end
+puts 'CREATED DUMMY USER ' << user1.email
+
 #ad1 = Ad.new()   
 #ad1.title = "harry poter et les 7 nains"
 #ad1.description = "bleu"

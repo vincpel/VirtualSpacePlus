@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330175814) do
+ActiveRecord::Schema.define(version: 20160410210109) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "book_id",       limit: 4
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(version: 20160330175814) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "text",       limit: 255
+    t.integer  "ad_id",      limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "user_id",    limit: 4
+  end
+
+  add_index "comments", ["ad_id"], name: "index_comments_on_ad_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "electronics", force: :cascade do |t|
     t.integer  "ad_id",      limit: 4
@@ -78,4 +89,6 @@ ActiveRecord::Schema.define(version: 20160330175814) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "ads", "tutorings"
+  add_foreign_key "comments", "ads"
+  add_foreign_key "comments", "users"
 end
