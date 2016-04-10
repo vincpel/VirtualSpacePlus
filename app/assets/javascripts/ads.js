@@ -120,6 +120,7 @@ var textcom = '{"comments":[' +
 var acomment = {"id":"John", "textcomment":"Doe"};
 
 function renderAllComments(comments){
+	
 	var comments = JSON.parse(comments);
 	var exp = 9+0;
 	
@@ -129,10 +130,11 @@ function renderAllComments(comments){
     }
 	
 	var commentSection = `
-	<div>
+	<div id="loncomment">
 		<p>${commentlist}</p>
 	</div>`;
 	
+	$("#loncomment").remove();
 	$("#commentSection").append(commentSection);
 };
 
