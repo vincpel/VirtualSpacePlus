@@ -16,12 +16,21 @@
 
 	<td>
 		<p class=""> <%= ad.price %> </p>
-	 </td>
+  </td>
+
+	<td>
+		<p class=""> <%= ad.sold || false %> </p>
+	</td>
 
 	<td>	
-              <%= link_to 'Edit', edit_ad_path(ad), class: "btn btn-xs btn-warning" %>
-	      <%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-xs btn-danger" %>
-        </td>
+        <%= link_to 'Edit', edit_ad_path(ad), class: "btn btn-xs btn-warning" %>
+        <%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-xs btn-danger" %>
+        <%= form_for :ad, url: ad_path(ad), method: :put  do |f| %>
+          <%= f.text_field  :sold,:value => true,  :hidden => true %>
+          <%= f.submit :value => "sold"%>
+        <% end %>
+
+  </td>
 
       </tr>
     </tbody>

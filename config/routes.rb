@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   #resources :ads
   
   resources :ads
+  #post 'ads/:id' => 'ads#sellAdd'
   resources :books
   resources :electronics
   resources :tutorings

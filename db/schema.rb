@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410210109) do
+ActiveRecord::Schema.define(version: 20160411022827) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "book_id",       limit: 4
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160410210109) do
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.integer  "tutoring_id",   limit: 4
+    t.boolean  "sold"
   end
 
   add_index "ads", ["tutoring_id"], name: "index_ads_on_tutoring_id", using: :btree
