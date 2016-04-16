@@ -5,75 +5,91 @@ function Comment(adid, message, anno){
 	this.adid = adid;
 	this.message = message;
 	this.anno = anno;
+
+  this.all = function(){
+	  var xid = $("#addid").text();
+	  $get({
+	  	dataType: "application/json",
+	  	url: "/comments",
+	  	data: {ad_id: xid},
+	  	success: function(result){
+	  		comments = results;
+      	}
+	  });
+  };
+
+  this.save = function(){
+      $.post({ 
+      	dataType: "application/json",
+      	url: "/comments.json", 
+      	data:  {text: this.message, ad_id: this.adid, anno: this.anno },
+      	function(result){
+  				alert("ok");
+      	}
+      });
+  };
 };
-
-
-Comment.prototype.all = function(){
-	var xid = $("#addid").text();
-	$get({
-		dataType: "application/json",
-		url: "/comments",
-		data: {ad_id: xid},
-		success: function(result){
-			comments = results;
-    	}
-	});
-};
-
-Comment.prototype.save = function(){
-    $.post({ 
-    	     dataType: "application/json",
-    		 url: "/comments.json", 
-    		 data:  {text: this.message, ad_id: this.adid, anno: this.anno },
-    		 function(result){
-				alert("ok");
-    		 }
-    });
-};
-
-
 
 //class commentController
 var CommentConttroler = function(){
 	this.comments = null;
-};
 
-CommentConttroler.prototype.show = function(){
-  var xid = $("#addid").text();
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      var result = xhttp.responseText;
-      renderAllComments(result);
-    }
+  this.show = function(){
+    var xid = $("#addid").text();
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        var result = xhttp.responseText;
+        renderAllComments(result);
+      }
+    };
+    xhttp.open("GET", "/comments.json?ad_id="+xid, true);
+    xhttp.setRequestHeader('Content-Type', 'application/json');
+    xhttp.send(xid);
   };
-  xhttp.open("GET", "/comments.json?ad_id="+xid, true);
-  xhttp.setRequestHeader('Content-Type', 'application/json');
-  xhttp.send(xid);
+  
+  this.create = function(comment){
+  	var ncom = $("#sendcommentform");
+  	var intext = $("#id777").val();
+  	var inanno = $("#sendcommentform").children().eq(3).val();
+  	var infadid = $("#addid").text();
+  	
+  	var newcomm = new Comment(infadid, intext, inanno);
+  	newcomm.save();
+  	
+  	this.show();
+  };
 };
 
-CommentConttroler.prototype.create = function(comment){
-	var ncom = $("#sendcommentform");
-	var intext = $("#id777").val();
-	var inanno = $("#sendcommentform").children().eq(3).val();
-	var infadid = $("#addid").text();
-	
-	var newcomm = new Comment(infadid, intext, inanno);
-	newcomm.save();
-	
-	this.show();
-};
 
-function Mail(callbackinfo, mailbody){
+function Mail(callbackinfo, mailbody, ad_id){
   this.callbackinfo = callbackinfo;
   this.mailbody = mailbody;
+  this.ad_id = ad_id;
+  
+  this.save = function(){
+      $.post({ 
+      	dataType: "application/json",
+      	url: "/ad_mailer.json", 
+      	data:  {callbackinfo: this.callbackinfo, ad_id: this.ad_id, mailbody: this.mailbody },
+      	function(result){
+  				alert("ok");
+      	}
+      });
+  };
 };
 
 function MailController(){
 
-
-
-}
+  this.create = function(comment){
+  	var adid = $("#addid").text();
+  	var contactinfo = $("#yyu12").val();
+  	var messagebody = $("#yyu13").val();
+  	var newcomm = new Mail(contactinfo, messagebody,adid);
+  	newcomm.save();
+  	
+  };
+};
 
 function renderComments(){
 		
@@ -91,17 +107,6 @@ function renderCommentForm(){
 	$("#commentSection").append(commentform);
 };
 
-var textcom = '{"comments":[' +
-'{"id":"1","textcomment":"Doe" },' +
-'{"id":"2","textcomment":"Smith" },' +
-'{"id":"3","textcomment":"Jones" }]}';
-
-
- var fcomments = [
-    {"id":"John", "textcomment":"Doe"},
-    {"id":"Anna", "textcomment":"Smith"},
-    {"id":"Peter","textcomment": "Jones"}
-]; 
 
 var acomment = {"id":"John", "textcomment":"Doe"};
 
@@ -147,10 +152,10 @@ function renderMailSender(){
 		<div id="sendmailform" class="menu mini-menu-app">
 			<b>Send A mail to seller:</b> <br>
 			Leave contact: <br>
-			<textarea name="callbackinfo"></textarea><br>
+			<textarea id="yyu12" name="callbackinfo"></textarea><br>
 			Email Body: <br>
-			<textarea name="mailbody"></textarea><br>
-			<input id="askcomment" type="submit" value="Send"></input>
+			<textarea id="yyu13" name="mailbody"></textarea><br>
+			<input id="askmail" type="submit" value="Send"></input>
 		</div>`;
     location.append(commentform);
 };
@@ -166,8 +171,12 @@ var ready = function() {
   $("#askcomment").click(function() {
   	ccontroller.create();
   });
-  
+
   ccontroller.show();
+  var mcontroller = new MailController();
+  $("#askmail").click(function() {
+  	mcontroller.create();
+  });
   }
 
 
