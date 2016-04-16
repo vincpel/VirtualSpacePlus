@@ -15,7 +15,23 @@
 @import "./*";
 @import "primer";
 
+.section-layout{
+  position: relative;
+  padding: 15px;
+  font-size: 13px;
+  line-height: 1.4;
+  border: 1px solid #e5e5e5;
+  border-radius: .25rem .25rem 0 0;
 
+
+}
+.comment{
+  border-bottom: 1px solid #eee;
+  //background-color: rgb(64, 120, 192);
+  padding: 10px;
+  margin: 10px; 
+
+}
 
 .masthead{
   //display: block;
@@ -33,3 +49,9 @@
 	font-family: Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
         font-size: 24px;
 }
+
+.mini-menu-app{
+  padding: 10px;
+  background-color: whitesmoke;
+}
+

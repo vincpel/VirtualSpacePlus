@@ -1,9 +1,14 @@
+<div id="apid1"></div>
+
+
 <p id="notice"><%= notice %></p>
 
-<%= render 'render_ad' %>
-<%= render "#{@ad.category.pluralize}/render_ad" %>
-
-<div id="commentSection"></div>
+<div class="section-layout">
+  <%= render 'render_ad' %>
+  <%= render "#{@ad.category.pluralize}/render_ad" %>
+</div>
+  
+<div class="section-layout" id="commentSection"></div>
 
 
 

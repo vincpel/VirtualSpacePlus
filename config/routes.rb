@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
      
 	
+  get 'lol/pop'
+
+  get 'lol/pop2'
+
+  get 'lol/pop'
+
   resources :comments
   resources :tutorings
 	# on peut faire sa aussii resources :resumes, only: [:index, :new, :create, :destroy]

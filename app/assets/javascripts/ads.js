@@ -7,10 +7,9 @@ function Comment(adid, message, anno){
 	this.anno = anno;
 };
 
+
 Comment.prototype.all = function(){
-	//// TODO xhrrequest. GET /ads/4/comments
 	var xid = $("#addid").text();
-	//var comments;
 	$get({
 		dataType: "application/json",
 		url: "/comments",
@@ -22,11 +21,6 @@ Comment.prototype.all = function(){
 };
 
 Comment.prototype.save = function(){
-	
- //var acomment = {"id":"John", "textcomment":"Doe"};
-//var comment1 = new Comment();
-
-	//var data = JSON.stringify(this);
     $.post({ 
     	     dataType: "application/json",
     		 url: "/comments.json", 
@@ -46,7 +40,6 @@ var CommentConttroler = function(){
 
 CommentConttroler.prototype.show = function(){
   var xid = $("#addid").text();
-  //xid = JSON.stringify(xid);
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -57,38 +50,31 @@ CommentConttroler.prototype.show = function(){
   xhttp.open("GET", "/comments.json?ad_id="+xid, true);
   xhttp.setRequestHeader('Content-Type', 'application/json');
   xhttp.send(xid);
-  //xhttp.send(JSON.stringify({name:"John Rambo", time:"2pm"}));
-	
-	
-
-	//var comments;
-	//var xid = $("#addid").text();
-	//$.ajax({
-	//	url: "/comments.json",
-	//	data: {ad_id: xid},
-	//	succes: function(result){
-	//		renderAllComments(result);
-    //	},
-    //	dataType: "application/json"
-	//});
 };
 
 CommentConttroler.prototype.create = function(comment){
-	// vachercher ses champ
 	var ncom = $("#sendcommentform");
-	var intext = $("#sendcommentform").children().eq(1).val();
+	var intext = $("#id777").val();
 	var inanno = $("#sendcommentform").children().eq(3).val();
 	var infadid = $("#addid").text();
 	
-	//Comment(adid, message, anno)
 	var newcomm = new Comment(infadid, intext, inanno);
 	newcomm.save();
 	
 	this.show();
-	
 };
 
-//comment views and bindings
+function Mail(callbackinfo, mailbody){
+  this.callbackinfo = callbackinfo;
+  this.mailbody = mailbody;
+};
+
+function MailController(){
+
+
+
+}
+
 function renderComments(){
 		
 };
@@ -126,32 +112,63 @@ function renderAllComments(comments){
 	
 	var commentlist = "";
 	for(i = 0; i < comments.length; i++) {
-        commentlist += "<p><b>"+ comments[i].email+"</b></p>" + "<p>"+ comments[i].text+"</p>";
+        commentlist += "<div class='comment'>"+"<p><b>"+ comments[i].email+"</b></p>" + "<p>"+ comments[i].text+"</p>"+"</div>";
     }
 	
 	var commentSection = `
 	<div id="loncomment">
-		<p>${commentlist}</p>
+		<div>${commentlist}</div>
 	</div>`;
 	
 	$("#loncomment").remove();
+  var comhead = `<h3>Comments ... </h3>`
+	$("#commentSection").append(comhead);
 	$("#commentSection").append(commentSection);
 };
 
 
+function rendercomform(){
+  var location = $(".one-fourth")
+	var commentform = `
+		<div id="sendcommentform" class="menu mini-menu-app">
+			  <b>Add a comment:</b> <br>
+			  <textarea id="id777" name="textcomment"></textarea><br>
+			  dont display my email: 
+			  <input id="id444" type="checkbox" name="annonymous"></input> <br>
+			  <input id="askcomment" type="submit" value="Send"></input>
+		</div>`;
+    location.append(commentform);
+};
+
+
+function renderMailSender(){
+  var location = $(".one-fourth")
+	var commentform = `
+		<div id="sendmailform" class="menu mini-menu-app">
+			<b>Send A mail to seller:</b> <br>
+			Leave contact: <br>
+			<textarea name="callbackinfo"></textarea><br>
+			Email Body: <br>
+			<textarea name="mailbody"></textarea><br>
+			<input id="askcomment" type="submit" value="Send"></input>
+		</div>`;
+    location.append(commentform);
+};
 
 
 var ready = function() {
 
-  renderCommentForm();
+  if($("#apid1").length){
   
+  rendercomform();
+  renderMailSender();
   var ccontroller = new CommentConttroler;
   $("#askcomment").click(function() {
   	ccontroller.create();
   });
   
-  
   ccontroller.show();
+  }
 
 
 };
