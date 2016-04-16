@@ -113,12 +113,10 @@ var acomment = {"id":"John", "textcomment":"Doe"};
 function renderAllComments(comments){
 	
 	var comments = JSON.parse(comments);
-	var exp = 9+0;
-	
 	var commentlist = "";
 	for(i = 0; i < comments.length; i++) {
-        commentlist += "<div class='comment'>"+"<p><b>"+ comments[i].email+"</b></p>" + "<p>"+ comments[i].text+"</p>"+"</div>";
-    }
+    commentlist += "<div class='comment'>"+"<p><b>"+ comments[i].email+"</b></p>" + "<p>"+ comments[i].text+"</p>"+"</div>";
+  }
 	
 	var commentSection = `
 	<div id="loncomment">
@@ -126,6 +124,7 @@ function renderAllComments(comments){
 	</div>`;
 	
 	$("#loncomment").remove();
+  $("#commentSection").empty();
   var comhead = `<h3>Comments ... </h3>`
 	$("#commentSection").append(comhead);
 	$("#commentSection").append(commentSection);
@@ -145,7 +144,6 @@ function rendercomform(){
     location.append(commentform);
 };
 
-
 function renderMailSender(){
   var location = $(".one-fourth")
 	var commentform = `
@@ -159,7 +157,6 @@ function renderMailSender(){
 		</div>`;
     location.append(commentform);
 };
-
 
 var ready = function() {
 
