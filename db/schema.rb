@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411022827) do
+ActiveRecord::Schema.define(version: 20160417161618) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "book_id",       limit: 4
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 20160411022827) do
     t.datetime "updated_at",             null: false
     t.string   "criteria",   limit: 255
   end
+
+  create_table "simple_captcha_data", force: :cascade do |t|
+    t.string   "key",        limit: 40
+    t.string   "value",      limit: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
 
   create_table "tutorings", force: :cascade do |t|
     t.integer  "ad_id",      limit: 4

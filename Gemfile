@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'spring'
 gem 'carrierwave'
+gem 'simple_captcha2', require: 'simple_captcha'
 group :development, :test do
 	gem 'byebug'
 	gem 'railroady'

@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
      
-	
-  get 'lol/pop'
-
-  get 'lol/pop2'
-
-  get 'lol/pop'
 
   resources :comments
   resources :tutorings
@@ -31,6 +25,7 @@ Rails.application.routes.draw do
   #resources :ads
   
   resources :ads
+  get 'captcha'  =>   'ads#capstore'
   #post 'ads/:id' => 'ads#sellAdd'
   resources :books
   resources :electronics
@@ -38,12 +33,12 @@ Rails.application.routes.draw do
   resources :workgroups
  
   #resources :researches
-
   get    'r'       =>  'researches#index'
   get    'r_advc'  =>  'researches#newAdvanced'
   get    'r/:id'   =>  'researches#show'
   post   'new_r'   =>  'researches#create' 
-
+  #resources :researches
+  post   'mail'   =>  'ad_mailer#sendmail' 
   # try those later 
   get    'home'    => 'pages#home'
   get    'help'    => 'pages#help'

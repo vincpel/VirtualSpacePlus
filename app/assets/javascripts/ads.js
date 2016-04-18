@@ -67,26 +67,31 @@ function Mail(callbackinfo, mailbody, ad_id){
   this.mailbody = mailbody;
   this.ad_id = ad_id;
   
-  this.save = function(){
+  this.save = function(c1, c2){
       $.post({ 
       	dataType: "application/json",
-      	url: "/ad_mailer.json", 
-      	data:  {callbackinfo: this.callbackinfo, ad_id: this.ad_id, mailbody: this.mailbody },
-      	function(result){
-  				alert("ok");
-      	}
-      });
+      	url: "/mail.json", 
+      	data:  {captcha: c2, captchat_key: c1 ,callbackinfo: this.callbackinfo, ad_id: this.ad_id, mailbody: this.mailbody },
+      }).error(function(jqxhr, status, errorThrown){ 
+          if(jqxhr.status != 200){
+            alert(status);
+            alert("bad capcha");
+
+          } 
+        });
   };
 };
 
 function MailController(){
 
   this.create = function(comment){
+    var c1 = $(".simple_captcha_field").children().last().val();
+    var c2 = $("#captcha").val();
   	var adid = $("#addid").text();
   	var contactinfo = $("#yyu12").val();
   	var messagebody = $("#yyu13").val();
   	var newcomm = new Mail(contactinfo, messagebody,adid);
-  	newcomm.save();
+  	newcomm.save(c1, c2);
   	
   };
 };
@@ -145,6 +150,15 @@ function rendercomform(){
 };
 
 function renderMailSender(){
+  var cpt;
+	$.get({
+    async: false,
+		url: "/captcha",
+		success: function(result){
+			cpt = result;
+    	}
+	});
+
   var location = $(".one-fourth")
 	var commentform = `
 		<div id="sendmailform" class="menu mini-menu-app">
@@ -153,8 +167,11 @@ function renderMailSender(){
 			<textarea id="yyu12" name="callbackinfo"></textarea><br>
 			Email Body: <br>
 			<textarea id="yyu13" name="mailbody"></textarea><br>
+      ${cpt}
 			<input id="askmail" type="submit" value="Send"></input>
 		</div>`;
+
+  
     location.append(commentform);
 };
 
