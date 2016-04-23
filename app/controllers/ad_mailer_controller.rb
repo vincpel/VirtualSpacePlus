@@ -7,8 +7,8 @@ class AdMailerController < ApplicationController
     buyerinfo = params["callbackinfo"] || "no callback info left ..."
     buyermsg =  params["mailbody"]     || "no msg left ..."
 
-    AdMailer.mailproxysend(buyerinfo,buyermsg, ads_seller).deliver_later
     if simple_captcha_valid?
+      AdMailer.mailproxysend(buyerinfo,buyermsg, ads_seller).deliver_later
       respond_to do |format|
         format.json { render status: 200, json: true  }
       end
