@@ -25,6 +25,13 @@ class BooksController < ApplicationController
     checkUserIsLogedIn?
   end
 
+  def createfromtemplate
+    checkUserIsLogedIn?
+    @ad = Ad.find(params[:id]).clone
+    @book = @ad.book.clone
+    render "books/new" 
+  end 
+
   # POST /books
   # POST /books.json
   def create

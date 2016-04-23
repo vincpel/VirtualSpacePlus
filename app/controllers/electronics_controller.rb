@@ -24,6 +24,13 @@ class ElectronicsController < ApplicationController
   def edit
     checkUserIsLogedIn?
   end
+  
+  def createfromtemplate
+    checkUserIsLogedIn?
+    @ad = Ad.find(params[:id]).clone
+    @electronic = @ad.electronic.clone
+    render "electronics/new" 
+  end 
 
   # POST /electronics
   # POST /electronics.json

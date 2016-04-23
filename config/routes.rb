@@ -27,9 +27,17 @@ Rails.application.routes.draw do
   resources :ads
   get 'captcha'  =>   'ads#capstore'
   #post 'ads/:id' => 'ads#sellAdd'
+  
+  get 'books/new/:id' => 'books#createfromtemplate'
   resources :books
+  
+  get 'electronics/new/:id' => 'electronics#createfromtemplate'
   resources :electronics
+  
+  get 'tutorings/new/:id' => 'tutorings#createfromtemplate'
   resources :tutorings
+  
+  get 'workgroups/new/:id' => 'workgroups#createfromtemplate'
   resources :workgroups
  
   #resources :researches

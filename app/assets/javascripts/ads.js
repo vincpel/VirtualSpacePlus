@@ -107,7 +107,7 @@ function renderCommentForm(){
 			<textarea name="textcomment"></textarea><br>
 			dont display my email: 
 			<input type="checkbox" name="annonymous"></input> <br>
-			<input id="askcomment" type="submit" value="Send"></input>
+			<input class="btn" id="askcomment" type="submit" value="Send"></input>
 		</div>`;
 	$("#commentSection").append(commentform);
 };
@@ -144,9 +144,22 @@ function rendercomform(){
 			  <textarea id="id777" name="textcomment"></textarea><br>
 			  dont display my email: 
 			  <input id="id444" type="checkbox" name="annonymous"></input> <br>
-			  <input id="askcomment" type="submit" value="Send"></input>
+			  <input class="btn btn-primary" id="askcomment" type="submit" value="Send"></input>
 		</div>`;
     location.append(commentform);
+};
+
+function rendercreatefromtemplate(){
+  var adid = $("#addid").text();
+  var categ = $("#addcateg").text();
+  var location = $(".one-fourth")
+	var form = `
+		<div id="createfromform" class="menu mini-menu-app">
+			  <b>You want to post some thing similar?:</b> <br>
+        <a class="btn btn-primary" href="/${categ}s/new/${adid}" role="button">create from this template</a>
+		</div>
+    `;
+    location.append(form);
 };
 
 function renderMailSender(){
@@ -168,7 +181,7 @@ function renderMailSender(){
 			Email Body: <br>
 			<textarea id="yyu13" name="mailbody"></textarea><br>
       ${cpt}
-			<input id="askmail" type="submit" value="Send"></input>
+			<input id="askmail" class="btn btn-primary" type="submit" value="Send"></input>
 		</div>`;
 
   
@@ -179,6 +192,7 @@ var ready = function() {
 
   if($("#apid1").length){
   
+  rendercreatefromtemplate();
   rendercomform();
   renderMailSender();
   var ccontroller = new CommentConttroler;

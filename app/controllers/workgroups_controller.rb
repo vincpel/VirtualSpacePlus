@@ -23,6 +23,14 @@ class WorkgroupsController < ApplicationController
   # GET /workgroups/1/edit
   def edit
   end
+  
+  
+  def createfromtemplate
+    checkUserIsLogedIn?
+    @ad = Ad.find(params[:id]).clone
+    @workgroup = @ad.workgroup.clone
+    render "workgroups/new" 
+  end 
 
   # POST /workgroups
   # POST /workgroups.json

@@ -24,6 +24,13 @@ class TutoringsController < ApplicationController
   # GET /tutorings/1/edit
   def edit
   end
+  
+  def createfromtemplate
+    checkUserIsLogedIn?
+    @ad = Ad.find(params[:id]).clone
+    @tutoring = @ad.tutoring.clone
+    render "tutorings/new" 
+  end 
 
   # POST /tutorings
   # POST /tutorings.json
